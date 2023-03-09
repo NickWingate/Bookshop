@@ -24,6 +24,9 @@ public class AudioBook extends Book{
         this.format = format;
     }
 
+    private Duration duration;
+    private AudioFormat format;
+
     public Duration getDuration() {
         return duration;
     }
@@ -40,6 +43,4 @@ public class AudioBook extends Book{
         this.format = format;
     }
 
-    private Duration duration;
-    private AudioFormat format;
 }

@@ -23,6 +23,9 @@ public class EBook extends Book {
         this.format = format;
     }
 
+    private int numberOfPages;
+    private EBookFormat format;
+
     public int getNumberOfPages() {
         return numberOfPages;
     }
@@ -39,6 +42,4 @@ public class EBook extends Book {
         this.format = format;
     }
 
-    private int numberOfPages;
-    private EBookFormat format;
 }
