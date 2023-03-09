@@ -2,7 +2,7 @@ package Entities;
 
 import Enums.Role;
 
-public class User {
+public abstract class User {
     public User(int id,
                 String username,
                 String surname,
@@ -12,14 +12,14 @@ public class User {
         this.username = username;
         this.surname = surname;
         this.address = address;
-        this.role = role;
     }
 
     private int id;
     private String username;
     private String surname;
     private Address address;
-    private final Role role;
+
+    public abstract Role getRole();
 
     public int getId() {
         return id;
@@ -53,7 +53,4 @@ public class User {
         this.address = address;
     }
 
-    public Role getRole() {
-        return role;
-    }
 }
