@@ -1,6 +1,7 @@
 package Entities;
 
 import Enums.AudioFormat;
+import Enums.BookType;
 import Enums.Genre;
 import Enums.Language;
 
@@ -24,6 +25,10 @@ public class AudioBook extends Book{
         this.format = format;
     }
 
+    public AudioBook(){
+
+    }
+
     private Duration duration;
     private AudioFormat format;
 
@@ -43,4 +48,8 @@ public class AudioBook extends Book{
         this.format = format;
     }
 
+    @Override
+    public BookType getBookType() {
+        return BookType.AUDIOBOOK;
+    }
 }

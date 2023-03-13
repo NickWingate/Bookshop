@@ -1,5 +1,6 @@
 package Entities;
 
+import Enums.BookType;
 import Enums.Condition;
 import Enums.Genre;
 import Enums.Language;
@@ -22,6 +23,10 @@ public class PaperbackBook extends Book{
         this.condition = condition;
     }
 
+    public PaperbackBook(){
+
+    }
+
     private int numberOfPages;
     private Condition condition;
 
@@ -39,5 +44,10 @@ public class PaperbackBook extends Book{
 
     public void setCondition(Condition condition) {
         this.condition = condition;
+    }
+
+    @Override
+    public BookType getBookType() {
+        return BookType.PAPERBACK;
     }
 }

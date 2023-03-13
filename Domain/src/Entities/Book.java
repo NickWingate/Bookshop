@@ -1,12 +1,13 @@
 package Entities;
 
+import Enums.BookType;
 import Enums.Genre;
 import Enums.Language;
 
 import java.math.BigDecimal;
 import java.util.Date;
 
-public class Book {
+public abstract class Book {
     public Book(String barcode,
                 String title,
                 Language language,
@@ -89,4 +90,6 @@ public class Book {
     public void setPrice(BigDecimal price) {
         this.price = price;
     }
+
+    public abstract BookType getBookType();
 }

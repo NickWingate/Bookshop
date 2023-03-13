@@ -1,5 +1,6 @@
 package Entities;
 
+import Enums.BookType;
 import Enums.EBookFormat;
 import Enums.Genre;
 import Enums.Language;
@@ -23,6 +24,10 @@ public class EBook extends Book {
         this.format = format;
     }
 
+    public EBook(){
+
+    }
+
     private int numberOfPages;
     private EBookFormat format;
 
@@ -42,4 +47,8 @@ public class EBook extends Book {
         this.format = format;
     }
 
+    @Override
+    public BookType getBookType() {
+        return BookType.EBOOK;
+    }
 }
