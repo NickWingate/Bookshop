@@ -5,6 +5,7 @@ import Enums.Genre;
 import Enums.Language;
 
 import java.math.BigDecimal;
+import java.time.LocalDate;
 import java.util.Date;
 
 public abstract class Book {
@@ -12,7 +13,7 @@ public abstract class Book {
                 String title,
                 Language language,
                 Genre genre,
-                Date releaseDate,
+                LocalDate releaseDate,
                 int quantity,
                 BigDecimal price) {
         this.barcode = barcode;
@@ -51,7 +52,7 @@ public abstract class Book {
         return genre;
     }
 
-    public Date getReleaseDate() {
+    public LocalDate getReleaseDate() {
         return releaseDate;
     }
 
