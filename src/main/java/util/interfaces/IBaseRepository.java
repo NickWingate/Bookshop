@@ -1,4 +1,4 @@
-package Common.Interfaces;
+package main.java.util.interfaces;
 
 import java.util.List;
 

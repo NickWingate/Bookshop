@@ -1,14 +1,13 @@
-package Entities;
+package main.java.domain.entities;
 
-import Enums.AudioFormat;
-import Enums.BookType;
-import Enums.Genre;
-import Enums.Language;
+import main.java.domain.enums.AudioFormat;
+import main.java.domain.enums.BookType;
+import main.java.domain.enums.Genre;
+import main.java.domain.enums.Language;
 
 import java.math.BigDecimal;
 import java.time.Duration;
 import java.time.LocalDate;
-import java.util.Date;
 
 public class AudioBook extends Book{
 

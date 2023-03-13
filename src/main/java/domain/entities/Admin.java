@@ -1,6 +1,6 @@
-package Entities;
+package main.java.domain.entities;
 
-import Enums.Role;
+import main.java.domain.enums.Role;
 
 public class Admin extends User{
     public Admin(int id,

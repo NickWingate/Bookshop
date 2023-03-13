@@ -1,13 +1,13 @@
-package Entities;
+package main.java.domain.entities;
 
-import Enums.BookType;
-import Enums.Condition;
-import Enums.Genre;
-import Enums.Language;
+
+import main.java.domain.enums.BookType;
+import main.java.domain.enums.Condition;
+import main.java.domain.enums.Genre;
+import main.java.domain.enums.Language;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
-import java.util.Date;
 
 public class PaperbackBook extends Book{
     public PaperbackBook(String barcode,

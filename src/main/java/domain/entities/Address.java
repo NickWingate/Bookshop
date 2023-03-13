@@ -1,4 +1,4 @@
-package Entities;
+package main.java.domain.entities;
 
 public class Address {
     public Address(String houseNumber,

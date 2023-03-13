@@ -1,11 +1,9 @@
-package Entities;
+package main.java.domain.entities;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
-import java.util.Spliterator;
-import java.util.function.Consumer;
 
 public class Basket implements Iterable<Book>{
 

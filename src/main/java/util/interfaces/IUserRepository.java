@@ -1,6 +1,6 @@
-package Common.Interfaces;
+package main.java.util.interfaces;
 
-import Entities.User;
+import main.java.domain.entities.User;
 
 public interface IUserRepository extends IBaseRepository<User> {
     public boolean DeleteById(int id);

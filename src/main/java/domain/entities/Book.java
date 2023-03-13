@@ -1,8 +1,8 @@
-package Entities;
+package main.java.domain.entities;
 
-import Enums.BookType;
-import Enums.Genre;
-import Enums.Language;
+import main.java.domain.enums.BookType;
+import main.java.domain.enums.Genre;
+import main.java.domain.enums.Language;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;

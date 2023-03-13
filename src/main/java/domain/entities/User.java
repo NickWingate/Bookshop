@@ -1,6 +1,7 @@
-package Entities;
+package main.java.domain.entities;
 
-import Enums.Role;
+
+import main.java.domain.enums.Role;
 
 public abstract class User {
     public User(int id,

@@ -1,6 +1,6 @@
-package Common.Interfaces;
+package main.java.util.interfaces;
 
-import Entities.Book;
+import main.java.domain.entities.Book;
 
 public interface IBookRepository extends IBaseRepository<Book> {
     public boolean DeleteByBarcode(String barcode);
