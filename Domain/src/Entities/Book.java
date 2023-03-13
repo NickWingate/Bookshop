@@ -22,12 +22,15 @@ public class Book {
         this.quantity = quantity;
         this.price = price;
     }
+    public Book(){
 
-    private final String barcode;
-    private final String title;
-    private final Language language;
-    private final Genre genre;
-    private final Date releaseDate;
+    }
+
+    private String barcode;
+    private String title;
+    private Language language;
+    private Genre genre;
+    private LocalDate releaseDate;
     private int quantity;
     private BigDecimal price;
 
@@ -57,6 +60,26 @@ public class Book {
 
     public BigDecimal getPrice() {
         return price;
+    }
+
+    public void setBarcode(String barcode) {
+        this.barcode = barcode;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public void setLanguage(Language language) {
+        this.language = language;
+    }
+
+    public void setGenre(Genre genre) {
+        this.genre = genre;
+    }
+
+    public void setReleaseDate(LocalDate releaseDate) {
+        this.releaseDate = releaseDate;
     }
 
     public void setQuantity(int quantity) {
