@@ -7,6 +7,7 @@ import Enums.Language;
 
 import java.math.BigDecimal;
 import java.time.Duration;
+import java.time.LocalDate;
 import java.util.Date;
 
 public class AudioBook extends Book{
@@ -15,7 +16,7 @@ public class AudioBook extends Book{
                      String title,
                      Language language,
                      Genre genre,
-                     Date releaseDate,
+                     LocalDate releaseDate,
                      int quantity,
                      BigDecimal price,
                      Duration duration,

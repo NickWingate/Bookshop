@@ -6,6 +6,7 @@ import Enums.Genre;
 import Enums.Language;
 
 import java.math.BigDecimal;
+import java.time.LocalDate;
 import java.util.Date;
 
 public class PaperbackBook extends Book{
@@ -13,7 +14,7 @@ public class PaperbackBook extends Book{
                          String title,
                          Language language,
                          Genre genre,
-                         Date releaseDate,
+                         LocalDate releaseDate,
                          int quantity,
                          BigDecimal price,
                          int numberOfPages,

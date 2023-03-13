@@ -6,6 +6,7 @@ import Enums.Genre;
 import Enums.Language;
 
 import java.math.BigDecimal;
+import java.time.LocalDate;
 import java.util.Date;
 
 public class EBook extends Book {
@@ -14,7 +15,7 @@ public class EBook extends Book {
                  String title,
                  Language language,
                  Genre genre,
-                 Date releaseDate,
+                 LocalDate releaseDate,
                  int quantity,
                  BigDecimal price,
                  int numberOfPages,
