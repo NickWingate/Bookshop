@@ -7,12 +7,15 @@ public abstract class User {
     public User(int id,
                 String username,
                 String surname,
-                Address address,
-                Role role) {
+                Address address) {
         this.id = id;
         this.username = username;
         this.surname = surname;
         this.address = address;
+    }
+
+    public User(){
+
     }
 
     private int id;

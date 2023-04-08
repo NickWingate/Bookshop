@@ -9,17 +9,17 @@ public class Customer extends User{
                     String username,
                     String surname,
                     Address address,
-                    Role role,
-                    BigDecimal creditBalance,
-                    Basket basket) {
-        super(id, username, surname, address, role);
+                    BigDecimal creditBalance) {
+        super(id, username, surname, address);
         this.creditBalance = creditBalance;
-        this.basket = basket;
     }
 
+    public Customer(){
+
+    }
     private BigDecimal creditBalance;
 
-    private Basket basket;
+    private Basket basket = new Basket();
 
 
     @Override

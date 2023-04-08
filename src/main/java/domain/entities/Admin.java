@@ -6,11 +6,13 @@ public class Admin extends User{
     public Admin(int id,
                  String username,
                  String surname,
-                 Address address,
-                 Role role) {
-        super(id, username, surname, address, role);
+                 Address address) {
+        super(id, username, surname, address);
     }
 
+    public Admin(){
+
+    }
     @Override
     public Role getRole() {
         return Role.ADMIN;
