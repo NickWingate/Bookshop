@@ -41,7 +41,7 @@ public class BookParser implements IBookParser {
         book.setBarcode(values[0]);
         book.setTitle(values[2]);
         book.setLanguage(Language.valueOf(values[3].toUpperCase()));
-        book.setGenre(Genre.valueOf(values[4].toUpperCase()));
+        book.setGenre(Genre.valueOf(values[4].toUpperCase().replace(' ', '_')));
         book.setReleaseDate(LocalDate.parse(values[5],
                 DateTimeFormatter.ofPattern("dd-MM-yyyy")));
         book.setQuantity(Integer.valueOf(values[6]));
