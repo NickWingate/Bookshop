@@ -7,12 +7,13 @@ import main.java.domain.entities.User;
 import main.java.domain.enums.Role;
 import main.java.util.interfaces.IUserParser;
 
+import java.io.File;
 import java.math.BigDecimal;
 import java.util.List;
 
 public class UserParser implements IUserParser {
     @Override
-    public List<User> ParseFile(String fileName) {
+    public List<User> ParseFile(File source) {
         return null;
     }
 

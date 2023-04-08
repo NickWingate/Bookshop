@@ -7,17 +7,34 @@ import main.java.domain.entities.PaperbackBook;
 import main.java.domain.enums.*;
 import main.java.util.interfaces.IBookParser;
 
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.math.BigDecimal;
 import java.time.Duration;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 public class BookParser implements IBookParser {
     @Override
-    public List<Book> ParseFile(String fileName) {
-        return null;
+    public List<Book> ParseFile(File source) {
+        var books = new ArrayList<Book>();
+
+        try {
+            var scanner = new Scanner(source);
+            while (scanner.hasNextLine()){
+                var book = ParseLine(scanner.nextLine());
+
+                books.add(book);
+            }
+        } catch (FileNotFoundException e) {
+            // todo: something better here
+            throw new RuntimeException(e);
+        }
+        return books;
     }
 
     @Override
