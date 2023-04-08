@@ -6,6 +6,7 @@ import main.java.domain.entities.PaperbackBook;
 import main.java.domain.enums.*;
 import main.java.util.file.BookParser;
 import main.java.util.interfaces.IBookParser;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -17,6 +18,7 @@ import java.time.LocalDate;
 import java.time.LocalTime;
 
 import static org.junit.jupiter.api.Assertions.*;
+import static org.assertj.core.api.Assertions.assertThat;
 
 class BookParserTest {
 
@@ -45,7 +47,7 @@ class BookParserTest {
         var actual = _sut.ParseLine(line);
 
         // Assert
-        assertTrue(new ReflectionEquals(expected).matches(actual));
+        assertThat(actual).usingRecursiveComparison().isEqualTo(expected);
     }
 
     @Test
@@ -66,7 +68,8 @@ class BookParserTest {
         var actual = _sut.ParseLine(line);
 
         // Assert
-        assertTrue(new ReflectionEquals(expected).matches(actual));
+        assertThat(actual).usingRecursiveComparison().isEqualTo(expected);
+
     }
 
     @Test
@@ -87,6 +90,6 @@ class BookParserTest {
         var actual = _sut.ParseLine(line);
 
         // Assert
-        assertTrue(new ReflectionEquals(expected).matches(actual));
+        assertThat(actual).usingRecursiveComparison().isEqualTo(expected);
     }
 }
