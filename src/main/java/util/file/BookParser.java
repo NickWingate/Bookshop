@@ -31,8 +31,8 @@ public class BookParser implements IBookParser {
                 books.add(book);
             }
         } catch (FileNotFoundException e) {
-            // todo: something better here
-            throw new RuntimeException(e);
+            System.out.println("Couldn't read from file");
+            e.printStackTrace();
         }
         return books;
     }
