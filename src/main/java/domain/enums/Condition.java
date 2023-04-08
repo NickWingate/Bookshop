@@ -2,5 +2,10 @@ package main.java.domain.enums;
 
 public enum Condition {
     NEW,
-    USED
+    USED;
+
+    @Override
+    public String toString() {
+        return super.toString().toLowerCase();
+    }
 }

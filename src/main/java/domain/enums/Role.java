@@ -2,5 +2,10 @@ package main.java.domain.enums;
 
 public enum Role {
     ADMIN,
-    CUSTOMER
+    CUSTOMER;
+
+    @Override
+    public String toString() {
+        return super.toString().toLowerCase();
+    }
 }
