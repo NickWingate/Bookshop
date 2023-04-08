@@ -72,14 +72,7 @@ public class BookParser implements IBookParser {
                 ((PaperbackBook) book).setCondition(Condition.valueOf(addInfo2.toUpperCase()));
             }
             case AUDIOBOOK -> {
-                var timeData = addInfo1.split("\\.");
-                var duration = Duration.between(
-                        LocalTime.MIN,
-                        LocalTime.of(
-                                Integer.parseInt(timeData[0]),
-                                Integer.parseInt(timeData[1])
-                        ));
-                ((AudioBook) book).setDuration(duration);
+                ((AudioBook) book).setDuration(Float.valueOf(addInfo1));
                 ((AudioBook) book).setFormat(AudioFormat.valueOf(addInfo2.toUpperCase()));
             }
             case EBOOK -> {

@@ -62,7 +62,7 @@ class BookParserTest {
                 LocalDate.of(2020, 11, 24),
                 10,
                 new BigDecimal("30.25"),
-                Duration.between(LocalTime.MIN, LocalTime.of(4, 5)),
+               4.5f,
                 AudioFormat.MP3);
         // Act
         var actual = _sut.ParseLine(line);

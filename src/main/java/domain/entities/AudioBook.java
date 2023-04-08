@@ -18,7 +18,7 @@ public class AudioBook extends Book{
                      LocalDate releaseDate,
                      int quantity,
                      BigDecimal price,
-                     Duration duration,
+                     float duration,
                      AudioFormat format) {
         super(barcode, title, language, genre, releaseDate, quantity, price);
         this.duration = duration;
@@ -29,14 +29,14 @@ public class AudioBook extends Book{
 
     }
 
-    private Duration duration;
+    private float duration;
     private AudioFormat format;
 
-    public Duration getDuration() {
+    public float getDuration() {
         return duration;
     }
 
-    public void setDuration(Duration duration) {
+    public void setDuration(float duration) {
         this.duration = duration;
     }
 
