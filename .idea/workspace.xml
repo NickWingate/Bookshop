@@ -1,17 +1,533 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AnalysisUIOptions">
+    <option name="ANALYZE_INJECTED_CODE" value="false" />
+  </component>
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="3138a3d4-7ee9-431a-a3c6-37b1267a4902" name="Changes" comment="" />
+    <list default="true" id="3138a3d4-7ee9-431a-a3c6-37b1267a4902" name="Changes" comment="Fully implement UserRepository">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/fxml/test.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Bookshop.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Bookshop.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/util/file/CSVWriter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/util/file/CSVWriter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/util/interfaces/ICSVParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/util/interfaces/ICSVParser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Stock.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Stock.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/UserAccounts.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/UserAccounts.txt" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ProjectId" id="2MjnNcrhrlLUcwldSku2kzOBPo5" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "WebServerToolWindowFactoryState": "false"
+  <component name="ChangesViewManager">
+    <option name="groupingKeys">
+      <option value="directory" />
+    </option>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Enum" />
+        <option value="Interface" />
+        <option value="JUnit5 Test Class" />
+        <option value="Class" />
+        <option value="JavaFXApplication" />
+        <option value="FxmlFile" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN"
   }
 }]]></component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="477821f4-6e8b-4593-b649-b169caa95dc7" />
+        <option name="url" value="https://github.com/NickWingate/Bookshop.git" />
+      </UrlAndAccount>
+    </option>
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2MjnNcrhrlLUcwldSku2kzOBPo5" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "Downloaded.Files.Path.Enabled": "false",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
+    "create.test.in.the.same.root": "true",
+    "jdk.selected.JAVA_MODULE": "19",
+    "last_directory_selection": "C:/Users/Nick/Documents/Programming/COA256/Bookshop/Domain/src/Entities",
+    "last_opened_file_path": "C:/Users/Nick/.jdks/javafx-sdk-20/lib",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Libraries",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "settings.editor.selected.configurable": "preferences.JavaFX",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="main.java.util.interfaces" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="main.java.util.repositories" />
+      <recent name="main.java.util.interfaces" />
+      <recent name="main.java.domain.enums" />
+      <recent name="main.java.domain.entities" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="test.java.util.file" />
+      <recent name="main.java.util.file" />
+      <recent name="test.java.util.repositories" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.main.Main">
+    <configuration name="Main" type="Application" factoryName="Application" nameIsGenerated="true">
+      <option name="ALTERNATIVE_JRE_PATH" value="11" />
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="Bookshop" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="ALTERNATIVE_JRE_PATH" value="C:\Users\Nick\.jdks\openjdk-19.0.2" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="Bookshop" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="main.Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="main.Main" />
+      <module name="Bookshop" />
+      <option name="VM_PARAMETERS" value="--module-path &quot;C:\Users\Nick\.jdks\javafx-sdk-20\lib&quot; --add-modules=javafx.base,javafx.controls,javafx.graphics,javafx.media" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="main.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BookEncoderTest.encodeObject_shouldEncodeAudioBook" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Bookshop" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="test.java.util.file.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="test.java.util.file" />
+      <option name="MAIN_CLASS_NAME" value="test.java.util.file.BookEncoderTest" />
+      <option name="METHOD_NAME" value="encodeObject_shouldEncodeAudioBook" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BookParserTest.parseLine_shouldReturnAudioBook" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Bookshop" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="test.java.util.file.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="test.java.util.file" />
+      <option name="MAIN_CLASS_NAME" value="test.java.util.file.BookParserTest" />
+      <option name="METHOD_NAME" value="parseLine_shouldReturnAudioBook" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserEncoderTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Bookshop" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="test.java.util.file.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="test.java.util.file" />
+      <option name="MAIN_CLASS_NAME" value="test.java.util.file.UserEncoderTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="test.java.util.file in Bookshop" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Bookshop" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="test.java.util.file.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="test.java.util.file" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.Main" />
+      <item itemvalue="Application.main.Main" />
+      <item itemvalue="JUnit.BookEncoderTest.encodeObject_shouldEncodeAudioBook" />
+      <item itemvalue="JUnit.UserEncoderTest" />
+      <item itemvalue="JUnit.test.java.util.file in Bookshop" />
+      <item itemvalue="JUnit.BookParserTest.parseLine_shouldReturnAudioBook" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.main.Main" />
+        <item itemvalue="JUnit.UserEncoderTest" />
+        <item itemvalue="JUnit.test.java.util.file in Bookshop" />
+        <item itemvalue="JUnit.BookEncoderTest.encodeObject_shouldEncodeAudioBook" />
+        <item itemvalue="JUnit.BookParserTest.parseLine_shouldReturnAudioBook" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="3138a3d4-7ee9-431a-a3c6-37b1267a4902" name="Changes" comment="" />
+      <created>1678289888009</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1678289888009</updated>
+      <workItem from="1678289889212" duration="24444000" />
+      <workItem from="1680803437977" duration="21039000" />
+    </task>
+    <task id="LOCAL-00001" summary="Initial Commit">
+      <created>1678290087197</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1678290087197</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Create book domain entities">
+      <created>1678383358450</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1678383358450</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Move attributes to top of file">
+      <created>1678383496566</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1678383496566</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Add user and address domain entity">
+      <created>1678384157509</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1678384157509</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Add user children: admin and customer&#10;&#10;Also add iterable basket type">
+      <created>1678386734121</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1678386734121</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Scaffold repository interfaces">
+      <created>1678704032355</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1678704032355</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Refactor Book.java to POCO object&#10;&#10;All attrs have getter/setter and we have&#10;empty constructor">
+      <created>1678720460859</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1678720460859</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Specify BookType in each Book.java sub-class">
+      <created>1678720546716</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1678720546716</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Use LocalDate instead of Date in Book.java&#10;&#10;Newer and easier string conversion">
+      <created>1678720590391</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1678720590391</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Use LocalDate instead of Date in Book subclasses">
+      <created>1678720686566</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1678720686566</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Require id to fetch single book">
+      <created>1678720758391</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1678720758391</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Restructure project&#10;&#10;Move all into one module and organise&#10;by package">
+      <created>1678721471948</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1678721471948</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Restructure project&#10;&#10;Move all into one module and organise&#10;by package">
+      <created>1678721512418</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1678721512418</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Add example system data">
+      <created>1678725731891</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1678725731891</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Create and implement csv book parser">
+      <created>1680804125382</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1680804125382</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Create and implement csv user parser">
+      <created>1680973033298</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1680973033298</updated>
+    </task>
+    <task id="LOCAL-00017" summary="Use AssertJ for assertions">
+      <created>1680973076718</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1680973076718</updated>
+    </task>
+    <task id="LOCAL-00018" summary="Fix genre enum not parsing&#10;&#10;Caused due to Computer Science being stored but&#10;COMPUTER_SCIENCE being the enum">
+      <created>1680973352895</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1680973352895</updated>
+    </task>
+    <task id="LOCAL-00019" summary="Create BookRepository and implement GetAll()">
+      <created>1680973406335</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1680973406335</updated>
+    </task>
+    <task id="LOCAL-00020" summary="Override enum toString methods to fit storage format">
+      <created>1680978481760</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1680978481760</updated>
+    </task>
+    <task id="LOCAL-00021" summary="Add default constructors for user classes">
+      <created>1680978630440</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1680978630440</updated>
+    </task>
+    <task id="LOCAL-00022" summary="Switch to using float for audiobook duration">
+      <created>1680978778861</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1680978778861</updated>
+    </task>
+    <task id="LOCAL-00023" summary="Improve file reading exception handling">
+      <created>1680978864067</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1680978864067</updated>
+    </task>
+    <task id="LOCAL-00024" summary="Create book encoding to csv service">
+      <created>1680978907031</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1680978907031</updated>
+    </task>
+    <task id="LOCAL-00025" summary="Make and implement CSVWriter">
+      <created>1681209601606</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1681209601606</updated>
+    </task>
+    <task id="LOCAL-00026" summary="Add user encoder and unit tests">
+      <created>1681210333489</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1681210333489</updated>
+    </task>
+    <task id="LOCAL-00027" summary="Fully implement BookRepository">
+      <created>1681211889845</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1681211889845</updated>
+    </task>
+    <task id="LOCAL-00028" summary="Fully implement UserRepository">
+      <created>1681212816230</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1681212816231</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="Add user and address domain entity" />
+    <MESSAGE value="Add user children: admin and customer&#10;&#10;Also add iterable basket type" />
+    <MESSAGE value="Scaffold repository intefaces" />
+    <MESSAGE value="Scaffold repository interfaces" />
+    <MESSAGE value="Refactor Book.java to POCO object&#10;&#10;All attrs have getter/setter and we have&#10;empty constructor" />
+    <MESSAGE value="Specify BookType in each Book.java sub-class" />
+    <MESSAGE value="Use LocalDate instead of Date in Book.java&#10;&#10;Newer and easier string conversion" />
+    <MESSAGE value="Use LocalDate instead of Date in Book subclasses" />
+    <MESSAGE value="Require id to fetch single book" />
+    <MESSAGE value="Restructure project&#10;&#10;Move all into one module and organise&#10;by package" />
+    <MESSAGE value="Add example system data" />
+    <MESSAGE value="Create and implement csv book parser" />
+    <MESSAGE value="Create and implement csv user parser" />
+    <MESSAGE value="Use AssertJ for assertions" />
+    <MESSAGE value="Fix genre enum not parsing&#10;&#10;Caused due to Computer Science being stored but&#10;COMPUTER_SCIENCE being the enum" />
+    <MESSAGE value="Create BookRepository and implement GetAll()" />
+    <MESSAGE value="Override enum toString methods to fit storage format" />
+    <MESSAGE value="Add default constructors for user classes" />
+    <MESSAGE value="Switch to using float for audiobook duration" />
+    <MESSAGE value="Improve file reading exception handling" />
+    <MESSAGE value="Create book encoding to csv service" />
+    <MESSAGE value="Make and implement CSVWriter" />
+    <MESSAGE value="Add user encoder and unit tests" />
+    <MESSAGE value="Fully implement BookRepository" />
+    <MESSAGE value="Fully implement UserRepository" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fully implement UserRepository" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Main.java</url>
+          <line>28</line>
+          <option name="timeStamp" value="25" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Main.java</url>
+          <line>23</line>
+          <option name="timeStamp" value="26" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Main.java</url>
+          <line>21</line>
+          <option name="timeStamp" value="27" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Main.java</url>
+          <line>33</line>
+          <option name="timeStamp" value="28" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Main.java</url>
+          <line>36</line>
+          <option name="timeStamp" value="29" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/Main.java</url>
+          <line>17</line>
+          <option name="timeStamp" value="30" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/Bookshop$test_java_util_file_in_Bookshop.ic" NAME="test.java.util.file in Bookshop Coverage Results" MODIFIED="1680972735652" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>test.java.util.file.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/Bookshop$BookParserTest.ic" NAME="BookParserTest Coverage Results" MODIFIED="1680804024929" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>test.java.util.file.*</FILTER>
+    </SUITE>
+  </component>
 </project>
