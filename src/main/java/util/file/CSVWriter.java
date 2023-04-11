@@ -16,16 +16,18 @@ public class CSVWriter<T> implements ICSVWriter<T> {
     }
 
     @Override
-    public void WriteToFile(String filePath, List<T> entities) {
+    public boolean WriteToFile(String filePath, List<T> entities) {
         var csvString = _csvEncoder.EncodeObjects(entities);
 
         try {
             var writer = new FileWriter(filePath);
             writer.write(csvString);
             writer.close();
+            return true;
         } catch (IOException e) {
             System.out.println("Couldn't write to file");
             e.printStackTrace();
+            return false;
         }
 
     }

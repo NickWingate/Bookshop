@@ -3,20 +3,22 @@ package main.java.util.repositories;
 import main.java.domain.entities.Book;
 import main.java.util.interfaces.IBookParser;
 import main.java.util.interfaces.IBookRepository;
+import main.java.util.interfaces.ICSVWriter;
 
 import java.io.File;
-import java.io.FileNotFoundException;
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
 
 public class BookRepository implements IBookRepository {
 
     private IBookParser _bookParser;
+    private ICSVWriter<Book> _bookWriter;
     private String _stockFilePath;
 
-    public BookRepository(IBookParser bookParser, String stockFilePath) {
+    public BookRepository(IBookParser bookParser,
+                          ICSVWriter<Book> bookWriter,
+                          String stockFilePath) {
         _bookParser = bookParser;
+        _bookWriter = bookWriter;
         _stockFilePath = stockFilePath;
     }
 
@@ -42,21 +44,40 @@ public class BookRepository implements IBookRepository {
 
     @Override
     public boolean Add(Book entity) {
-        return false;
+        var books = GetAll();
+
+        books.add(entity);
+
+        return Save(books);
     }
 
     @Override
-    public boolean Update(Book entity) {
-        return false;
+    public boolean Update(String id, Book entity) {
+        var books = GetAll();
+
+        for (int i = 0; i < books.size(); i++) {
+            if (books.get(i).getBarcode().equals(id)){
+                books.set(i, entity);
+            }
+        }
+
+        return Save(books);
     }
 
     @Override
-    public boolean Delete(Book entity) {
-        return false;
+    public boolean Delete(String id) {
+        var books = GetAll();
+
+        for (int i = 0; i < books.size(); i++) {
+            if (books.get(i).getBarcode().equals(id)){
+                books.remove(i);
+            }
+        }
+
+        return Save(books);
     }
 
-    @Override
-    public boolean DeleteByBarcode(String barcode) {
-        return false;
+    private boolean Save(List<Book> books) {
+        return _bookWriter.WriteToFile(_stockFilePath, books);
     }
 }

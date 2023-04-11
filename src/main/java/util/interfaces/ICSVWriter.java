@@ -4,5 +4,5 @@ import java.io.File;
 import java.util.List;
 
 public interface ICSVWriter<T> {
-    public void WriteToFile(String filePath, List<T> entities);
+    public boolean WriteToFile(String filePath, List<T> entities);
 }
