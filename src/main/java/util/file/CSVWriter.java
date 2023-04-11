@@ -25,8 +25,8 @@ public class CSVWriter<T> implements ICSVWriter<T> {
             writer.close();
             return true;
         } catch (IOException e) {
-            System.out.println("Couldn't write to file");
             e.printStackTrace();
+            System.out.println(e.getMessage());
             return false;
         }
 

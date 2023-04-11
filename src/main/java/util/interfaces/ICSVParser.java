@@ -20,8 +20,8 @@ public interface ICSVParser<T> {
                 entities.add(book);
             }
         } catch (FileNotFoundException e) {
-            System.out.println("Couldn't read from file");
             e.printStackTrace();
+            System.out.println(e.getMessage());
         }
         return entities;
     }
