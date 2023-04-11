@@ -13,11 +13,6 @@ import java.util.List;
 
 public class UserParser implements IUserParser {
     @Override
-    public List<User> ParseFile(File source) {
-        return null;
-    }
-
-    @Override
     public User ParseLine(String line) {
         var rawValues = line.split(",");
         var values = new String[rawValues.length];

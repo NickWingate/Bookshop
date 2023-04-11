@@ -34,7 +34,7 @@ public class BookRepository implements IBookRepository {
         var books = GetAll();
 
         for (var book : books) {
-            if (book.getBarcode() == id){
+            if (book.getBarcode().equals(id)){
                 return book;
             }
         }

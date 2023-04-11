@@ -20,24 +20,6 @@ import java.util.Scanner;
 
 public class BookParser implements IBookParser {
     @Override
-    public List<Book> ParseFile(File source) {
-        var books = new ArrayList<Book>();
-
-        try {
-            var scanner = new Scanner(source);
-            while (scanner.hasNextLine()){
-                var book = ParseLine(scanner.nextLine());
-
-                books.add(book);
-            }
-        } catch (FileNotFoundException e) {
-            System.out.println("Couldn't read from file");
-            e.printStackTrace();
-        }
-        return books;
-    }
-
-    @Override
     public Book ParseLine(String line) {
         var rawValues = line.split(",");
         var values = new String[rawValues.length];
