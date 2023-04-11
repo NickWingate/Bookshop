@@ -13,7 +13,6 @@ public class BookEncoder implements IBookEncoder {
 
     @Override
     public String EncodeObject(Book object) {
-        // 22446688EBOOKBig Money EnergyFRENCHBUSINESS2021-01-211210.99
         //barcode, book type, title, language, genre, release
         //date, quantity in stock, retail price, additional information 1, additional information 2
         var string = object.getBarcode() + ", " +

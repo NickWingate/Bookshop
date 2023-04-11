@@ -24,11 +24,19 @@ public class BookRepository implements IBookRepository {
     public List<Book> GetAll() {
         var source = new File(_stockFilePath);
 
-        return  _bookParser.ParseFile(source);
+        return _bookParser.ParseFile(source);
     }
 
     @Override
-    public Book Get(int id) {
+    public Book Get(String id) {
+        var books = GetAll();
+
+        for (var book : books) {
+            if (book.getBarcode() == id){
+                return book;
+            }
+        }
+
         return null;
     }
 
