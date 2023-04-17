@@ -34,33 +34,6 @@ public class BookCollectionControl extends GridPane {
 
     @FXML
     private VBox bookBox;
-
-    @FXML
-    private TableView<Book> bookTable;
-
-    @FXML
-    private TableColumn<Book, String> barcodeColumn;
-
-    @FXML
-    private TableColumn<Book, String> titleColumn;
-
-    @FXML
-    private TableColumn<Book, Genre> genreColumn; // enum
-
-    @FXML
-    private TableColumn<Book, LocalDate> dateColumn; // date
-
-    @FXML
-    private TableColumn<Book, BookType> typeColumn; //enum
-
-    @FXML
-    private TableColumn<Book, Integer> quantityColumn; //int
-
-    @FXML
-    private TableColumn<Book, BigDecimal> priceColumn;
-
-    //private ObservableList<Book> books = FXCollections.observableArrayList();
-
     private ListProperty<Book> books = new SimpleListProperty<>();
 
 
@@ -81,20 +54,14 @@ public class BookCollectionControl extends GridPane {
         }
 
         books.addListener((Change<? extends Book> change) -> rebuildBooks());
-
-        //initializeColumns();
-
-        //populateBooks();
-
-        //bookTable.setItems(books);
     }
 
     public ListProperty<Book> booksProperty() {
-        return books ;
+        return books;
     }
 
     public ObservableList<Book> getBooks() {
-        return booksProperty().get() ;
+        return booksProperty().get();
     }
 
     private void rebuildBooks() {
@@ -102,22 +69,5 @@ public class BookCollectionControl extends GridPane {
         for (var book : books) {
             bookBox.getChildren().add(new BookControl(book));
         }
-    }
-
-    private void populateBooks() {
-        var bookRepo = new BookRepository(new BookParser(),
-                new CSVWriter<Book>(new BookEncoder()),
-                "src/main/resources/Stock.txt");
-        books.addAll(bookRepo.GetAll());
-    }
-
-    private void initializeColumns() {
-        barcodeColumn.setCellValueFactory(new PropertyValueFactory("barcode"));
-        titleColumn.setCellValueFactory(new PropertyValueFactory("title"));
-        genreColumn.setCellValueFactory(new PropertyValueFactory("genre"));
-        dateColumn.setCellValueFactory(new PropertyValueFactory("releaseDate"));
-        typeColumn.setCellValueFactory(new PropertyValueFactory("bookType"));
-        quantityColumn.setCellValueFactory(new PropertyValueFactory("quantity"));
-        priceColumn.setCellValueFactory(new PropertyValueFactory("price"));
     }
 }
