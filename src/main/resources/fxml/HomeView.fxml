@@ -32,21 +32,11 @@
                                     books="${controller.books}">
 
              </BookCollectionControl>
-<!--            <TableView prefHeight="200.0" prefWidth="200.0" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.vgrow="ALWAYS">-->
-<!--              <columns>-->
-<!--                <TableColumn prefWidth="47.200010657310486" text="Barcode" />-->
-<!--                <TableColumn prefWidth="103.1999740600586" text="Title" />-->
-<!--                  <TableColumn prefWidth="75.0" text="Author" />-->
-<!--                  <TableColumn prefWidth="75.0" text="Genre" />-->
-<!--                  <TableColumn prefWidth="75.0" text="Release Date" />-->
-<!--                  <TableColumn prefWidth="75.0" text="Type" />-->
-<!--                  <TableColumn prefWidth="75.0" text="Release Date" />-->
-<!--              </columns>-->
-<!--            </TableView>-->
             <HBox prefHeight="100.0" prefWidth="200.0">
                <children>
-                  <TextField HBox.hgrow="ALWAYS" />
-                  <Button mnemonicParsing="false" text="Add Book" fx:id="addBook" />
+                  <TextField HBox.hgrow="ALWAYS" promptText="Title..." fx:id="searchField"/>
+<!--                  <Button mnemonicParsing="false" text="Add Book" fx:id="addBook" />-->
+                  <Button mnemonicParsing="false" text="Search" fx:id="search" />
                </children>
             </HBox>
          </children>

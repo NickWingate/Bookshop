@@ -8,8 +8,9 @@
 33221144, audiobook, Project Management, English, Computer Science, 10-12-2019, 9, 22.00, 7.2, AAC
 33331122, paperback, Project Management, English, Computer Science, 01-12-2019, 3, 32.50, 132, new
 33332233, ebook, Office Not Required, English, Business, 11-02-2018, 4, 12.20, 258, MOBI
-44112233, audiobook, How To Be Right, French, Biography, 30-05-2019, 20, 3.0, 8.30, WMA
+44112233, audiobook, How To Be Right, French, Biography, 30-05-2019, 20, 3.0, 8.3, WMA
 44223344, paperback, Business And Investment, English, Business, 10-12-2020, 3, 11.25, 288, used
 44335566, paperback, Cyber Security, English, Computer Science, 10-10-2020, 8, 10.99, 256, new
 44556688, ebook, Cyber Security, English, Computer Science, 10-10-2020, 10, 10.10, 256, EPUB
 44556677, audiobook, Deep Work, French, Business, 05-01-2016, 7, 8.50, 5.5, MP3
+11111111, ebook, updated test, French, Computer Science, 11-04-2023, 3, 10.00, 10, PDF
