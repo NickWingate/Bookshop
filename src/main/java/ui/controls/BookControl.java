@@ -64,7 +64,7 @@ public class BookControl extends GridPane {
         language.setText(book.getLanguage().toString());
         genre.setText(book.getGenre().toString());
         type.setText(book.addionalInfoToString());
-        price.setText("£" + book.getPrice().setScale(2));
+        price.setText(String.format("£%.2f", book.getPrice()));
         quantity.setText(book.getQuantity() + " Available");
         barcode.setText(book.getBarcode());
         date.setText(book.getReleaseDate()

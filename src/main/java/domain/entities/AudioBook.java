@@ -5,8 +5,6 @@ import main.java.domain.enums.BookType;
 import main.java.domain.enums.Genre;
 import main.java.domain.enums.Language;
 
-import java.math.BigDecimal;
-import java.time.Duration;
 import java.time.LocalDate;
 
 public class AudioBook extends Book{
@@ -17,7 +15,7 @@ public class AudioBook extends Book{
                      Genre genre,
                      LocalDate releaseDate,
                      int quantity,
-                     BigDecimal price,
+                     double price,
                      float duration,
                      AudioFormat format) {
         super(barcode, title, language, genre, releaseDate, quantity, price);

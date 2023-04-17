@@ -5,7 +5,6 @@ import main.java.domain.enums.EBookFormat;
 import main.java.domain.enums.Genre;
 import main.java.domain.enums.Language;
 
-import java.math.BigDecimal;
 import java.time.LocalDate;
 
 public class EBook extends Book {
@@ -16,7 +15,7 @@ public class EBook extends Book {
                  Genre genre,
                  LocalDate releaseDate,
                  int quantity,
-                 BigDecimal price,
+                 double price,
                  int numberOfPages,
                  EBookFormat format) {
         super(barcode, title, language, genre, releaseDate, quantity, price);

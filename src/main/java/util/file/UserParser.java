@@ -8,7 +8,6 @@ import main.java.domain.enums.Role;
 import main.java.util.interfaces.IUserParser;
 
 import java.io.File;
-import java.math.BigDecimal;
 import java.util.List;
 
 public class UserParser implements IUserParser {
@@ -36,7 +35,7 @@ public class UserParser implements IUserParser {
         user.setAddress(address);
 
         if (role == Role.CUSTOMER){
-            ((Customer) user).setCreditBalance(new BigDecimal(values[6]));
+            ((Customer) user).setCreditBalance(Double.valueOf(values[6]));
         }
 
         return user;

@@ -2,14 +2,12 @@ package main.java.domain.entities;
 
 import main.java.domain.enums.Role;
 
-import java.math.BigDecimal;
-
 public class Customer extends User{
     public Customer(int id,
                     String username,
                     String surname,
                     Address address,
-                    BigDecimal creditBalance) {
+                    double creditBalance) {
         super(id, username, surname, address);
         this.creditBalance = creditBalance;
     }
@@ -17,7 +15,7 @@ public class Customer extends User{
     public Customer(){
 
     }
-    private BigDecimal creditBalance;
+    private double creditBalance;
 
     private Basket basket = new Basket();
 
@@ -31,15 +29,15 @@ public class Customer extends User{
         return basket;
     }
 
-    public BigDecimal getCreditBalance() {
+    public double getCreditBalance() {
         return creditBalance;
     }
 
-    public void setCreditBalance(BigDecimal creditBalance) {
+    public void setCreditBalance(double creditBalance) {
         this.creditBalance = creditBalance;
     }
 
-    public void incrementCreditBalance(BigDecimal amount) {
-        creditBalance.add(amount);
+    public void incrementCreditBalance(double amount) {
+        creditBalance += amount;
     }
 }

@@ -27,7 +27,6 @@ import main.java.util.file.BookParser;
 import main.java.util.file.CSVWriter;
 import main.java.util.repositories.BookRepository;
 
-import java.math.BigDecimal;
 import java.time.LocalDate;
 
 public class BookCollectionControl extends GridPane {

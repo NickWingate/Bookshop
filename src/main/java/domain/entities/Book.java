@@ -1,5 +1,6 @@
 package main.java.domain.entities;
 
+import javafx.beans.property.SimpleDoubleProperty;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.beans.property.SimpleStringProperty;
@@ -7,7 +8,6 @@ import main.java.domain.enums.BookType;
 import main.java.domain.enums.Genre;
 import main.java.domain.enums.Language;
 
-import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.Date;
 
@@ -18,21 +18,21 @@ public abstract class Book {
                 Genre genre,
                 LocalDate releaseDate,
                 int quantity,
-                BigDecimal price) {
+                double price) {
         this.barcode = new SimpleStringProperty(barcode);
         this.title = new SimpleStringProperty(title);
         this.language = new SimpleObjectProperty<>(language);
         this.genre = new SimpleObjectProperty<>(genre);
         this.releaseDate = new SimpleObjectProperty<>(releaseDate);
         this.quantity = new SimpleIntegerProperty(quantity);
-        this.price = new SimpleObjectProperty<>(price);
+        this.price = new SimpleDoubleProperty(price);
     }
     public Book(){
         barcode = new SimpleStringProperty(this, "barcode");
         quantity = new SimpleIntegerProperty(this, "quantity");
         genre = new SimpleObjectProperty<>(this, "genre");
         releaseDate = new SimpleObjectProperty<>(this, "releaseDate");
-        price = new SimpleObjectProperty<>(this, "price");
+        price = new SimpleDoubleProperty(this, "price");
         language = new SimpleObjectProperty<>(this, "language");
         title = new SimpleStringProperty(this, "title");
     }
@@ -43,7 +43,7 @@ public abstract class Book {
     private SimpleObjectProperty<Genre> genre;
     private SimpleObjectProperty<LocalDate> releaseDate;
     private SimpleIntegerProperty quantity;
-    private SimpleObjectProperty<BigDecimal> price;
+    private SimpleDoubleProperty price;
 
     public String getBarcode() {
         return barcode.get();
@@ -69,7 +69,7 @@ public abstract class Book {
         return quantity.get();
     }
 
-    public BigDecimal getPrice() {
+    public double getPrice() {
         return price.get();
     }
 
@@ -97,7 +97,7 @@ public abstract class Book {
         this.quantity.set(quantity);
     }
 
-    public void setPrice(BigDecimal price) {
+    public void setPrice(double price) {
         this.price.set(price);
     }
 

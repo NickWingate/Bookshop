@@ -18,7 +18,6 @@ import main.java.util.file.CSVWriter;
 import main.java.util.interfaces.IBookRepository;
 import main.java.util.repositories.BookRepository;
 
-import java.math.BigDecimal;
 import java.net.URL;
 import java.time.LocalDate;
 import java.util.ResourceBundle;
@@ -54,7 +53,7 @@ public class HomeViewController implements Initializable {
 //                    Genre.BIOGRAPHY,
 //                    LocalDate.of(2020, 11, 24),
 //                    10,
-//                    new BigDecimal("30.25"),
+//                    30.25,
 //                    4.5f,
 //                    AudioFormat.MP3));
 //        });

@@ -9,8 +9,6 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.internal.matchers.apachecommons.ReflectionEquals;
 
-import java.math.BigDecimal;
-
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -50,7 +48,7 @@ class UserParserTest {
                 "user2",
                 "Williams",
                 new Address("14", "E20 3BS", "London"),
-                new BigDecimal("100.00")
+                100.00
         );
 
         // Act

@@ -6,7 +6,6 @@ import main.java.domain.enums.Condition;
 import main.java.domain.enums.Genre;
 import main.java.domain.enums.Language;
 
-import java.math.BigDecimal;
 import java.time.LocalDate;
 
 public class PaperbackBook extends Book{
@@ -16,7 +15,7 @@ public class PaperbackBook extends Book{
                          Genre genre,
                          LocalDate releaseDate,
                          int quantity,
-                         BigDecimal price,
+                         double price,
                          int numberOfPages,
                          Condition condition) {
         super(barcode, title, language, genre, releaseDate, quantity, price);

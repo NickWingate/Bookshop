@@ -10,7 +10,6 @@ import main.java.util.interfaces.IBookEncoder;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import java.math.BigDecimal;
 import java.time.Duration;
 import java.time.LocalDate;
 import java.time.LocalTime;
@@ -36,7 +35,7 @@ class BookEncoderTest {
                 Genre.BIOGRAPHY,
                 LocalDate.of(2020, 11, 17),
                 5,
-                new BigDecimal("17.5"),
+                17.5,
                 768,
                 Condition.NEW);
 
@@ -57,7 +56,7 @@ class BookEncoderTest {
                 Genre.BIOGRAPHY,
                 LocalDate.of(2020, 11, 24),
                 10,
-                new BigDecimal("30.25"),
+                30.25,
                 4.5f,
                 AudioFormat.MP3);
 
@@ -76,7 +75,7 @@ class BookEncoderTest {
                 Genre.BUSINESS,
                 LocalDate.of(2021, 01, 21),
                 12,
-                new BigDecimal("10.99"),
+                10.99,
                 182,
                 EBookFormat.PDF);
         var expected = "22446688, ebook, Big Money Energy, French, Business, 21-01-2021, 12, 10.99, 182, PDF\n";

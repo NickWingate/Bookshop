@@ -9,7 +9,6 @@ import main.java.util.interfaces.IBookParser;
 
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.math.BigDecimal;
 import java.time.Duration;
 import java.time.LocalDate;
 import java.time.LocalTime;
@@ -44,7 +43,7 @@ public class BookParser implements IBookParser {
         book.setReleaseDate(LocalDate.parse(values[5],
                 DateTimeFormatter.ofPattern("dd-MM-yyyy")));
         book.setQuantity(Integer.valueOf(values[6]));
-        book.setPrice(new BigDecimal(values[7]));
+        book.setPrice(Double.valueOf(values[7]));
         var addInfo1 = values[8];
         var addInfo2 = values[9];
 

@@ -1,6 +1,5 @@
 package main.java.domain.entities;
 
-import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -39,11 +38,11 @@ public class Basket implements Iterable<Book>{
         books.clear();
     }
 
-    public BigDecimal calculateTotal()
+    public double calculateTotal()
     {
-        BigDecimal total = BigDecimal.ZERO;
+        var total = 0;
         for (Book book : books) {
-            total.add(book.getPrice());
+            total += book.getPrice();
         }
 
         return total;

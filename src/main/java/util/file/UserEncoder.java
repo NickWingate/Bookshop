@@ -17,7 +17,7 @@ public class UserEncoder implements IUserEncoder {
                 EncodeAddress(object.getAddress()) + ", ";
 
         if (object.getRole() == Role.CUSTOMER){
-            string += ((Customer) object).getCreditBalance();
+            string += String.format("%.2f", ((Customer) object).getCreditBalance());
         }
 
         return string + ", " + object.getRole().toString() + '\n';
