@@ -51,4 +51,14 @@ public class EBook extends Book {
     public BookType getBookType() {
         return BookType.EBOOK;
     }
+
+    @Override
+    public String addionalInfoToString() {
+        return "EBook - " + getFormat().toString();
+    }
+
+    @Override
+    public String lengthToString() {
+        return getNumberOfPages() + " Pages";
+    }
 }

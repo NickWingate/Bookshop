@@ -1,5 +1,8 @@
 package main.java.domain.entities;
 
+import javafx.beans.property.SimpleIntegerProperty;
+import javafx.beans.property.SimpleObjectProperty;
+import javafx.beans.property.SimpleStringProperty;
 import main.java.domain.enums.BookType;
 import main.java.domain.enums.Genre;
 import main.java.domain.enums.Language;
@@ -16,81 +19,91 @@ public abstract class Book {
                 LocalDate releaseDate,
                 int quantity,
                 BigDecimal price) {
-        this.barcode = barcode;
-        this.title = title;
-        this.language = language;
-        this.genre = genre;
-        this.releaseDate = releaseDate;
-        this.quantity = quantity;
-        this.price = price;
+        this.barcode = new SimpleStringProperty(barcode);
+        this.title = new SimpleStringProperty(title);
+        this.language = new SimpleObjectProperty<>(language);
+        this.genre = new SimpleObjectProperty<>(genre);
+        this.releaseDate = new SimpleObjectProperty<>(releaseDate);
+        this.quantity = new SimpleIntegerProperty(quantity);
+        this.price = new SimpleObjectProperty<>(price);
     }
     public Book(){
-
+        barcode = new SimpleStringProperty(this, "barcode");
+        quantity = new SimpleIntegerProperty(this, "quantity");
+        genre = new SimpleObjectProperty<>(this, "genre");
+        releaseDate = new SimpleObjectProperty<>(this, "releaseDate");
+        price = new SimpleObjectProperty<>(this, "price");
+        language = new SimpleObjectProperty<>(this, "language");
+        title = new SimpleStringProperty(this, "title");
     }
 
-    private String barcode;
-    private String title;
-    private Language language;
-    private Genre genre;
-    private LocalDate releaseDate;
-    private int quantity;
-    private BigDecimal price;
+    private SimpleStringProperty barcode;
+    private SimpleStringProperty title;
+    private SimpleObjectProperty<Language> language;
+    private SimpleObjectProperty<Genre> genre;
+    private SimpleObjectProperty<LocalDate> releaseDate;
+    private SimpleIntegerProperty quantity;
+    private SimpleObjectProperty<BigDecimal> price;
 
     public String getBarcode() {
-        return barcode;
+        return barcode.get();
     }
 
     public String getTitle() {
-        return title;
+        return title.get();
     }
 
     public Language getLanguage() {
-        return language;
+        return language.get();
     }
 
     public Genre getGenre() {
-        return genre;
+        return genre.get();
     }
 
     public LocalDate getReleaseDate() {
-        return releaseDate;
+        return releaseDate.get();
     }
 
     public int getQuantity() {
-        return quantity;
+        return quantity.get();
     }
 
     public BigDecimal getPrice() {
-        return price;
+        return price.get();
     }
 
     public void setBarcode(String barcode) {
-        this.barcode = barcode;
+        this.barcode.set(barcode);
     }
 
     public void setTitle(String title) {
-        this.title = title;
+        this.title.set(title);
     }
 
     public void setLanguage(Language language) {
-        this.language = language;
+        this.language.set(language);
     }
 
     public void setGenre(Genre genre) {
-        this.genre = genre;
+        this.genre.set(genre);
     }
 
     public void setReleaseDate(LocalDate releaseDate) {
-        this.releaseDate = releaseDate;
+        this.releaseDate.set(releaseDate);
     }
 
     public void setQuantity(int quantity) {
-        this.quantity = quantity;
+        this.quantity.set(quantity);
     }
 
     public void setPrice(BigDecimal price) {
-        this.price = price;
+        this.price.set(price);
     }
 
     public abstract BookType getBookType();
+
+    public abstract String addionalInfoToString();
+
+    public abstract String lengthToString();
 }

@@ -51,4 +51,14 @@ public class PaperbackBook extends Book{
     public BookType getBookType() {
         return BookType.PAPERBACK;
     }
+
+    @Override
+    public String addionalInfoToString() {
+        return "Paperback - " + getCondition().toString();
+    }
+
+    @Override
+    public String lengthToString() {
+        return getNumberOfPages() + " Pages";
+    }
 }

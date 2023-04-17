@@ -52,4 +52,14 @@ public class AudioBook extends Book{
     public BookType getBookType() {
         return BookType.AUDIOBOOK;
     }
+
+    @Override
+    public String addionalInfoToString() {
+        return "Audio Book - " + getFormat();
+    }
+
+    @Override
+    public String lengthToString() {
+        return getDuration() + " Hours";
+    }
 }

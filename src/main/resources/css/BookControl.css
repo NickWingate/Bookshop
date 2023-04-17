@@ -1,0 +1,31 @@
+
+
+.language-tag {
+    -fx-background-color: #f5aafa;
+    -fx-background-radius: 7px;
+    -fx-label-padding: 5px;
+}
+
+.genre-tag {
+    -fx-background-color: #e7ffab;
+    -fx-background-radius: 7px;
+    -fx-label-padding: 5px;
+}
+
+.paperback-tag {
+    -fx-background-color: #faaaaa;
+    -fx-background-radius: 7px;
+    -fx-label-padding: 5px;
+}
+
+.audiobook-tag {
+    -fx-background-color: #aafaf3;
+    -fx-background-radius: 7px;
+    -fx-label-padding: 5px;
+}
+
+.ebook-tag {
+    -fx-background-color: #aaabfa;
+    -fx-background-radius: 7px;
+    -fx-label-padding: 5px;
+}
