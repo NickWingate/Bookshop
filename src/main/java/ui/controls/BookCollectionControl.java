@@ -28,12 +28,15 @@ import main.java.util.file.CSVWriter;
 import main.java.util.repositories.BookRepository;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 
 public class BookCollectionControl extends GridPane {
 
     @FXML
     private VBox bookBox;
     private ListProperty<Book> books = new SimpleListProperty<>();
+
+    private ArrayList<BookControl> bookControls = new ArrayList<>();
 
 
     public BookCollectionControl() {
@@ -52,7 +55,7 @@ public class BookCollectionControl extends GridPane {
             System.out.println(e.getMessage());
         }
 
-        books.addListener((Change<? extends Book> change) -> rebuildBooks());
+        books.addListener((Change<? extends Book> change) -> rebuildBooks(change));
     }
 
     public ListProperty<Book> booksProperty() {
@@ -63,10 +66,25 @@ public class BookCollectionControl extends GridPane {
         return booksProperty().get();
     }
 
-    private void rebuildBooks() {
+    private void rebuildBooks(Change change) {
         bookBox.getChildren().clear();
         for (var book : books) {
-            bookBox.getChildren().add(new BookControl(book));
+            var bookControl = getBookControl(book);
+            bookBox.getChildren().add(bookControl);
         }
+    }
+
+    private BookControl getBookControl(Book book) {
+        // todo: if book quantity do we need to update the bookcontrol?
+        for (var bookControl : bookControls) {
+            if (bookControl.getBarcode().equals(book.getBarcode())){
+                return bookControl;
+            }
+        }
+
+        var bookControl = new BookControl(book);
+        bookControls.add(bookControl);
+
+        return bookControl;
     }
 }

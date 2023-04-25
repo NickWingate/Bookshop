@@ -20,6 +20,7 @@ import main.java.util.repositories.BookRepository;
 
 import java.net.URL;
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 public class HomeViewController implements Initializable {
@@ -58,12 +59,12 @@ public class HomeViewController implements Initializable {
 //                    AudioFormat.MP3));
 //        });
 
-        search.setOnAction(actionEvent -> searchBooks());
+        searchField.textProperty().addListener(((observableValue, oldValue, newValue) -> searchBooks(newValue)));
     }
 
-    private void searchBooks() {
+    private void searchBooks(String searchTerm) {
         books.clear();
-        var searchTerm = searchField.getText();
+        //var searchTerm = searchField.getText();
 
         var allBooks = _bookRepository.GetAll();
 
@@ -72,13 +73,13 @@ public class HomeViewController implements Initializable {
             return;
         }
 
+        var matchingBooks = new ArrayList<Book>();
         for (var book : allBooks) {
             if (book.getTitle().toLowerCase().contains(searchTerm.toLowerCase())){
-                books.add(book);
+                matchingBooks.add(book);
             }
         }
-
-
+        books.addAll(matchingBooks);
     }
 
     public ObservableList<Book> getBooks() {

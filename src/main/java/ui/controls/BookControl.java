@@ -58,6 +58,10 @@ public class BookControl extends GridPane {
         }
     }
 
+    public String getBarcode() {
+        return barcode.getText();
+    }
+
     public BookControl(Book book){
         this();
         title.setText(book.getTitle());
