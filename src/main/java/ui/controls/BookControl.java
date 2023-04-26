@@ -1,11 +1,13 @@
 package main.java.ui.controls;
 
+import javafx.beans.property.ObjectProperty;
+import javafx.beans.property.SimpleObjectProperty;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.control.Label;
-import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
+import javafx.util.converter.NumberStringConverter;
 import main.java.domain.entities.Book;
 
 import java.time.format.DateTimeFormatter;
@@ -40,6 +42,8 @@ public class BookControl extends GridPane {
     @FXML
     private Label length;
 
+    private ObjectProperty<Book> book;
+
     public BookControl() {
 
         super();
@@ -58,12 +62,10 @@ public class BookControl extends GridPane {
         }
     }
 
-    public String getBarcode() {
-        return barcode.getText();
-    }
-
     public BookControl(Book book){
         this();
+        this.book = new SimpleObjectProperty<>(book);
+        bindLabels();
         title.setText(book.getTitle());
         language.setText(book.getLanguage().toString());
         genre.setText(book.getGenre().toString());
@@ -74,5 +76,14 @@ public class BookControl extends GridPane {
         date.setText(book.getReleaseDate()
                 .format(DateTimeFormatter.ofPattern("dd-MM-yyyy")));
         length.setText(book.lengthToString());
+    }
+
+    private void bindLabels() {
+        // todo: only quantity is mutable?
+        quantity.textProperty().bindBidirectional(book.get().quantityProperty(), new NumberStringConverter());
+    }
+
+    public String getBarcode() {
+        return barcode.getText();
     }
 }

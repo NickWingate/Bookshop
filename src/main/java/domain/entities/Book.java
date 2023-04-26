@@ -1,9 +1,6 @@
 package main.java.domain.entities;
 
-import javafx.beans.property.SimpleDoubleProperty;
-import javafx.beans.property.SimpleIntegerProperty;
-import javafx.beans.property.SimpleObjectProperty;
-import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.*;
 import main.java.domain.enums.BookType;
 import main.java.domain.enums.Genre;
 import main.java.domain.enums.Language;
@@ -106,4 +103,8 @@ public abstract class Book {
     public abstract String addionalInfoToString();
 
     public abstract String lengthToString();
+
+    public IntegerProperty quantityProperty(){
+        return quantity;
+    }
 }
