@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="61.0" prefWidth="319.0" stylesheets="@../../css/BookControl.css" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1">
+  <columnConstraints>
+    <ColumnConstraints halignment="LEFT" hgrow="ALWAYS" maxWidth="165.0" minWidth="10.0" prefWidth="165.0" />
+    <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" maxWidth="185.0" minWidth="10.0" prefWidth="144.0" />
+  </columnConstraints>
+  <rowConstraints>
+    <RowConstraints minHeight="10.0" prefHeight="65.0" vgrow="ALWAYS" />
+      <RowConstraints />
+  </rowConstraints>
+   <children>
+      <GridPane GridPane.hgrow="SOMETIMES" GridPane.vgrow="ALWAYS">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <HBox prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="1">
+               <children>
+                  <Label fx:id="type" text="Type - Format" />
+                  <Label text=", " />
+                  <Label fx:id="language" layoutX="84.0" layoutY="10.0" text="Language" />
+               </children></HBox>
+            <HBox prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Label fx:id="title" text="Title">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="barcode" alignment="BOTTOM_CENTER" text="barcode" />
+               </children>
+            </HBox>
+            <Label fx:id="length" layoutX="10.0" layoutY="36.0" text="Duration/Length" GridPane.rowIndex="2" />
+         </children>
+      </GridPane>
+      <GridPane GridPane.columnIndex="1" GridPane.rowSpan="2">
+        <columnConstraints>
+          <ColumnConstraints hgrow="ALWAYS" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="NEVER" minWidth="10.0" prefWidth="70.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints />
+        </rowConstraints>
+         <children>
+            <Label fx:id="price" text="£00.00" GridPane.halignment="RIGHT" GridPane.hgrow="ALWAYS">
+               <GridPane.margin>
+                  <Insets left="10.0" right="10.0" />
+               </GridPane.margin>
+            </Label>
+            <Button fx:id="actionButton" mnemonicParsing="false" text="X" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.hgrow="NEVER" GridPane.rowSpan="2" GridPane.valignment="CENTER" />
+            <Spinner fx:id="quantitySelected" editable="true" initialValue="1" prefWidth="50.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" />
+         </children>
+      </GridPane>
+   </children>
+   <padding>
+      <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+   </padding>
+</GridPane>

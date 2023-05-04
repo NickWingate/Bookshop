@@ -1,33 +1,17 @@
 package main.java.ui.controls;
 
-import javafx.beans.property.ListProperty;
-import javafx.beans.property.SimpleListProperty;
-import javafx.collections.FXCollections;
-import javafx.collections.ListChangeListener;
+import javafx.beans.property.*;
 import javafx.collections.ListChangeListener.Change;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.cell.MapValueFactory;
-import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
 import main.java.domain.entities.Book;
-import main.java.domain.entities.EBook;
-import main.java.domain.entities.PaperbackBook;
-import main.java.domain.enums.BookType;
-import main.java.domain.enums.Condition;
-import main.java.domain.enums.Genre;
-import main.java.domain.enums.Language;
-import main.java.util.file.BookEncoder;
-import main.java.util.file.BookParser;
-import main.java.util.file.CSVWriter;
-import main.java.util.repositories.BookRepository;
+import main.java.ui.common.interfaces.AddToBasketFunction;
+import main.java.ui.common.interfaces.BookControlBase;
 
-import java.time.LocalDate;
 import java.util.ArrayList;
 
 public class BookCollectionControl extends GridPane {
@@ -36,7 +20,13 @@ public class BookCollectionControl extends GridPane {
     private VBox bookBox;
     private ListProperty<Book> books = new SimpleListProperty<>();
 
-    private ArrayList<BookControl> bookControls = new ArrayList<>();
+    private StringProperty actionButtonText = new SimpleStringProperty();
+
+    private StringProperty bookControlType = new SimpleStringProperty();
+
+    private ArrayList<BookControlBase> bookControls = new ArrayList<>();
+
+    private AddToBasketFunction addToBasketFunction;
 
 
     public BookCollectionControl() {
@@ -74,17 +64,62 @@ public class BookCollectionControl extends GridPane {
         }
     }
 
-    private BookControl getBookControl(Book book) {
+    private BookControlBase getBookControl(Book book) {
         // todo: if book quantity do we need to update the bookcontrol?
         for (var bookControl : bookControls) {
-            if (bookControl.getBarcode().equals(book.getBarcode())){
+            if (bookControl.equalBook(book)){
                 return bookControl;
             }
         }
 
-        var bookControl = new BookControl(book);
+        var bookControl = NewBookControl(book);
+        bookControl.setButtonText(getActionButtonText());
+
+        if (addToBasketFunction != null){
+            bookControl.setActionButtonEvent(addToBasketFunction);
+        }
+
         bookControls.add(bookControl);
 
         return bookControl;
+    }
+
+    private BookControlBase NewBookControl(Book book) {
+        switch (getBookControlType()){
+            case "Small":
+                return new SmallBookControl(book);
+            case "Normal":
+            default:
+                return new BookControl(book);
+        }
+    }
+
+    public void setAddToBasketFunction(AddToBasketFunction addToBasketFunction) {
+        this.addToBasketFunction = addToBasketFunction;
+    }
+
+    public StringProperty actionButtonTextProperty() {
+        return actionButtonText;
+    }
+
+    public final void setActionButtonText(String string) {
+        actionButtonTextProperty().set(string);
+    }
+
+    public final String getActionButtonText() {
+        return actionButtonTextProperty().get();
+    }
+
+    public StringProperty bookControlTypeProperty() {
+        return bookControlType;
+    }
+
+    public final void setBookControlType(String string) {
+        bookControlTypeProperty().set(string);
+    }
+
+    public final String getBookControlType() {
+        var s = bookControlTypeProperty().get();
+        return s == null ? "" : s;
     }
 }

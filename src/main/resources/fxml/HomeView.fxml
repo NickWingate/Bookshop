@@ -28,8 +28,9 @@
         </rowConstraints>
          <children>
              <BookCollectionControl GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.vgrow="ALWAYS"
-                                    fx:id="bookCollectionControl"
-                                    books="${controller.books}">
+                                    fx:id="bookStock"
+                                    books="${controller.books}"
+                                    actionButtonText="Add to Basket">
 
              </BookCollectionControl>
             <HBox prefHeight="100.0" prefWidth="200.0">
