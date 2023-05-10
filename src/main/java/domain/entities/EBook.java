@@ -1,11 +1,9 @@
 package main.java.domain.entities;
 
-import main.java.domain.enums.BookType;
-import main.java.domain.enums.EBookFormat;
-import main.java.domain.enums.Genre;
-import main.java.domain.enums.Language;
+import main.java.domain.enums.*;
 
 import java.time.LocalDate;
+import java.util.List;
 
 public class EBook extends Book {
 
@@ -59,5 +57,13 @@ public class EBook extends Book {
     @Override
     public String lengthToString() {
         return getNumberOfPages() + " Pages";
+    }
+
+    @Override
+    public List<IBookProperty> getProperties() {
+        var props = super.getProperties();
+        props.add(getFormat());
+
+        return props;
     }
 }

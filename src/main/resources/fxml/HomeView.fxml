@@ -5,45 +5,39 @@
 <?import javafx.scene.layout.*?>
 
 <?import main.java.ui.controls.BookCollectionControl?>
-<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1080.0"
+<?import main.java.ui.controls.FilterControl?>
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
+          prefHeight="720.0" prefWidth="1080.0"
           xmlns:fx="http://javafx.com/fxml/1"
           xmlns="http://javafx.com/javafx/17.0.2-ea"
-            fx:controller="main.java.ui.controllers.HomeViewController">
-  <columnConstraints>
-      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-  </columnConstraints>
-  <rowConstraints>
-    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-  </rowConstraints>
-   <children>
-      <GridPane GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.vgrow="ALWAYS">
-        <columnConstraints>
-          <ColumnConstraints hgrow="ALWAYS" minWidth="10.0" prefWidth="100.0" />
-        </columnConstraints>
-        <rowConstraints>
-          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-        </rowConstraints>
-         <children>
-             <BookCollectionControl GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.vgrow="ALWAYS"
-                                    fx:id="bookStock"
-                                    books="${controller.books}"
-                                    actionButtonText="Add to Basket">
+          fx:controller="main.java.ui.controllers.HomeViewController">
+    <columnConstraints>
+        <ColumnConstraints />
+        <ColumnConstraints hgrow="ALWAYS"/>
+        <ColumnConstraints />
+    </columnConstraints>
+    <rowConstraints>
+        <RowConstraints />
+        <RowConstraints />
+    </rowConstraints>
+    <children>
+        <FilterControl GridPane.columnIndex="0" GridPane.rowIndex="0" GridPane.rowSpan="2" fx:id="filterControl" />
 
-             </BookCollectionControl>
-            <HBox prefHeight="100.0" prefWidth="200.0">
-               <children>
-                  <TextField HBox.hgrow="ALWAYS" promptText="Title..." fx:id="searchField"/>
-<!--                  <Button mnemonicParsing="false" text="Add Book" fx:id="addBook" />-->
-                  <Button mnemonicParsing="false" text="Search" fx:id="search" />
-               </children>
-            </HBox>
-         </children>
-         <padding>
-            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-         </padding>
-      </GridPane>
-   </children>
+        <TextField GridPane.columnIndex="1" GridPane.rowIndex="0" fx:id="searchField" promptText="Search..." />
+
+        <BookCollectionControl GridPane.columnIndex="1" GridPane.rowIndex="1" fx:id="bookStockControl"
+                               books="${controller.stockBooks}"
+                               actionButtonText="Add to Basket" />
+
+        <Button GridPane.columnIndex="2" GridPane.rowIndex="0" text="Edit Stock" fx:id="editStockBtn"/>
+
+        <BookCollectionControl GridPane.columnIndex="2" GridPane.rowIndex="1" fx:id="basketControl"
+                               books="${controller.basketBooks}"
+                               actionButtonText="X"
+                               bookControlType="Small"
+                               prefWidth="320" />
+    </children>
+    <padding>
+        <Insets bottom="10.0" top="10.0" />
+     </padding>
 </GridPane>

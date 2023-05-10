@@ -9,7 +9,7 @@ import javafx.scene.Node;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
 import main.java.domain.entities.Book;
-import main.java.ui.common.interfaces.AddToBasketFunction;
+import main.java.ui.common.interfaces.IBookControlAction;
 import main.java.ui.common.interfaces.BookControlBase;
 
 import java.util.ArrayList;
@@ -26,7 +26,7 @@ public class BookCollectionControl extends GridPane {
 
     private ArrayList<BookControlBase> bookControls = new ArrayList<>();
 
-    private AddToBasketFunction addToBasketFunction;
+    private IBookControlAction actionButtonFunction;
 
 
     public BookCollectionControl() {
@@ -64,8 +64,12 @@ public class BookCollectionControl extends GridPane {
         }
     }
 
+    private void forceRebuildBooks(){
+        bookControls.clear();
+        rebuildBooks(null);
+    }
+
     private BookControlBase getBookControl(Book book) {
-        // todo: if book quantity do we need to update the bookcontrol?
         for (var bookControl : bookControls) {
             if (bookControl.equalBook(book)){
                 return bookControl;
@@ -75,8 +79,8 @@ public class BookCollectionControl extends GridPane {
         var bookControl = NewBookControl(book);
         bookControl.setButtonText(getActionButtonText());
 
-        if (addToBasketFunction != null){
-            bookControl.setActionButtonEvent(addToBasketFunction);
+        if (actionButtonFunction != null){
+            bookControl.setActionButtonEvent(actionButtonFunction);
         }
 
         bookControls.add(bookControl);
@@ -94,8 +98,9 @@ public class BookCollectionControl extends GridPane {
         }
     }
 
-    public void setAddToBasketFunction(AddToBasketFunction addToBasketFunction) {
-        this.addToBasketFunction = addToBasketFunction;
+    public void setActionButtonFunction(IBookControlAction actionButtonFunction) {
+        this.actionButtonFunction = actionButtonFunction;
+        forceRebuildBooks();
     }
 
     public StringProperty actionButtonTextProperty() {

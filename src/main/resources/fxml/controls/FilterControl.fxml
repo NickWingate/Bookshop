@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox prefHeight="700.0" prefWidth="250.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <BorderPane>
+         <center>
+            <Label alignment="CENTER" text="Filter" BorderPane.alignment="CENTER">
+               <font>
+                  <Font name="System Bold" size="48.0" />
+               </font>
+            </Label>
+         </center>
+      </BorderPane>
+      <Separator prefWidth="200.0" />
+      <Separator prefWidth="200.0" />
+      <BorderPane>
+         <top>
+            <Label text="Language" BorderPane.alignment="CENTER">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+         </top>
+         <center>
+            <GridPane hgap="5.0" vgap="3.0" BorderPane.alignment="CENTER">
+               <rowConstraints>
+                  <RowConstraints />
+                  <RowConstraints />
+               </rowConstraints>
+               <columnConstraints>
+                  <ColumnConstraints halignment="RIGHT" hgrow="ALWAYS" />
+                  <ColumnConstraints hgrow="ALWAYS" />
+               </columnConstraints>
+               <children>
+                  <CheckBox fx:id="englishToggle" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                  <Label text="English" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+
+                  <CheckBox fx:id="frenchToggle" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                  <Label text="French" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+               </children>
+               <BorderPane.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </BorderPane.margin>
+            </GridPane>
+         </center>
+      </BorderPane>
+      <Separator prefWidth="200.0" />
+      <BorderPane>
+         <top>
+            <Label text="Type" BorderPane.alignment="CENTER">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+         </top>
+         <center>
+            <GridPane hgap="5.0" vgap="3.0" BorderPane.alignment="CENTER">
+               <rowConstraints>
+                  <RowConstraints />
+                  <RowConstraints />
+                  <RowConstraints />
+                  <RowConstraints />
+                  <RowConstraints />
+                  <RowConstraints />
+               </rowConstraints>
+               <columnConstraints>
+                  <ColumnConstraints halignment="RIGHT" hgrow="ALWAYS" />
+                  <ColumnConstraints hgrow="ALWAYS" />
+               </columnConstraints>
+               <children>
+                  <CheckBox fx:id="paperbackToggle" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                  <Label text="Paperback" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+
+                  <GridPane hgap="5.0" vgap="3.0" GridPane.columnIndex="0" GridPane.columnSpan="2" GridPane.rowIndex="1">
+                     <rowConstraints>
+                        <RowConstraints />
+                        <RowConstraints />
+                     </rowConstraints>
+                     <columnConstraints>
+                        <ColumnConstraints halignment="RIGHT" hgrow="ALWAYS" />
+                        <ColumnConstraints hgrow="ALWAYS" />
+                     </columnConstraints>
+                     <children>
+                        <CheckBox fx:id="newToggle" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                        <Label text="New" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+                        <CheckBox fx:id="usedToggle" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                        <Label text="Used" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                     </children>
+                  </GridPane>
+
+
+                  <CheckBox fx:id="audiobookToggle" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+                  <Label text="Audiobook" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+
+                  <GridPane hgap="5.0" vgap="3.0" GridPane.columnIndex="0" GridPane.columnSpan="2" GridPane.rowIndex="3">
+                     <rowConstraints>
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                     </rowConstraints>
+                     <columnConstraints>
+                        <ColumnConstraints halignment="RIGHT" hgrow="ALWAYS" />
+                        <ColumnConstraints hgrow="ALWAYS" />
+                     </columnConstraints>
+                     <children>
+                        <CheckBox fx:id="epubToggle" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                        <Label text="EPUB" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+                        <CheckBox fx:id="mobiToggle" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                        <Label text="MOBI" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <CheckBox fx:id="pdfToggle" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+                        <Label text="PDF" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                     </children>
+                  </GridPane>
+
+
+                  <CheckBox fx:id="ebookToggle" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+                  <Label text="Ebook" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+
+                  <GridPane hgap="5.0" vgap="3.0" GridPane.columnIndex="0" GridPane.columnSpan="2" GridPane.rowIndex="5">
+                     <rowConstraints>
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                     </rowConstraints>
+                     <columnConstraints>
+                        <ColumnConstraints halignment="RIGHT" hgrow="ALWAYS" />
+                        <ColumnConstraints hgrow="ALWAYS" />
+                     </columnConstraints>
+                     <children>
+                        <CheckBox fx:id="mp3Toggle" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                        <Label text="MP3" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+                        <CheckBox fx:id="wmaToggle" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                        <Label text="WMA" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <CheckBox fx:id="aacToggle" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+                        <Label text="AAC" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                     </children>
+                  </GridPane>
+
+               </children>
+               <BorderPane.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </BorderPane.margin>
+            </GridPane>
+         </center>
+      </BorderPane>
+      <Separator layoutX="10.0" layoutY="234.0" prefWidth="200.0" />
+      <BorderPane layoutX="10.0" layoutY="237.0">
+         <top>
+            <Label text="Genre" BorderPane.alignment="CENTER">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+         </top>
+         <center>
+            <GridPane hgap="5.0" BorderPane.alignment="CENTER">
+               <rowConstraints>
+                  <RowConstraints />
+                  <RowConstraints />
+                  <RowConstraints />
+                  <RowConstraints />
+               </rowConstraints>
+               <columnConstraints>
+                  <ColumnConstraints halignment="RIGHT" hgrow="ALWAYS" />
+                  <ColumnConstraints hgrow="ALWAYS" />
+               </columnConstraints>
+               <children>
+                  <CheckBox fx:id="politicsToggle" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                  <Label text="Politics" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+
+                  <CheckBox fx:id="businessToggle" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                  <Label text="Business" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+
+                  <CheckBox fx:id="computerScienceToggle" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+                  <Label text="Computer Science" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+
+                  <CheckBox fx:id="biographyToggle" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+                  <Label text="Biography" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+               </children>
+               <BorderPane.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </BorderPane.margin>
+            </GridPane>
+         </center>
+      </BorderPane>
+      <Separator layoutX="10.0" layoutY="320.0" prefWidth="200.0" />
+      <BorderPane layoutX="10.0" layoutY="237.0">
+         <top>
+            <Label text="Length" BorderPane.alignment="CENTER">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+         </top>
+      </BorderPane>
+   </children>
+</VBox>

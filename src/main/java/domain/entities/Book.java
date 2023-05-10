@@ -3,10 +3,13 @@ package main.java.domain.entities;
 import javafx.beans.property.*;
 import main.java.domain.enums.BookType;
 import main.java.domain.enums.Genre;
+import main.java.domain.enums.IBookProperty;
 import main.java.domain.enums.Language;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 public abstract class Book {
     public Book(String barcode,
@@ -40,6 +43,7 @@ public abstract class Book {
     private SimpleObjectProperty<Genre> genre;
     private SimpleObjectProperty<LocalDate> releaseDate;
     private SimpleIntegerProperty quantity;
+    private SimpleIntegerProperty quantitySelected = new SimpleIntegerProperty();
     private SimpleDoubleProperty price;
 
     public String getBarcode() {
@@ -104,7 +108,41 @@ public abstract class Book {
 
     public abstract String lengthToString();
 
+    public List<IBookProperty> getProperties() {
+        var props = new ArrayList<IBookProperty>();
+        props.add(getLanguage());
+        props.add(getGenre());
+        props.add(getBookType());
+
+        return props;
+    }
     public IntegerProperty quantityProperty(){
         return quantity;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (o == this)
+            return true;
+
+        if (!(o instanceof Book))
+            return false;
+
+        var toCompare = (Book) o;
+
+        return getBarcode().equals(toCompare.getBarcode()) &&
+                getTitle().equals(toCompare.getTitle()) &&
+                getLanguage() == toCompare.getLanguage() &&
+                getGenre() == toCompare.getGenre() &&
+                getReleaseDate().isEqual(toCompare.getReleaseDate()) &&
+                getPrice() == toCompare.getPrice(); // todo: and quantity? no because quantity is seperate from book
+    }
+
+    public int getQuantitySelected() {
+        return quantitySelected.get();
+    }
+
+    public void setQuantitySelected(int quantitySelected) {
+        this.quantitySelected.set(quantitySelected);
     }
 }

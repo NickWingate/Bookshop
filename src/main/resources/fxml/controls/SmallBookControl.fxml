@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="61.0" prefWidth="319.0" stylesheets="@../../css/BookControl.css" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1">
+<GridPane maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="320.0" prefHeight="60.0" prefWidth="320.0" stylesheets="@../../css/BookControl.css" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1">
   <columnConstraints>
     <ColumnConstraints halignment="LEFT" hgrow="ALWAYS" maxWidth="165.0" minWidth="10.0" prefWidth="165.0" />
     <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" maxWidth="185.0" minWidth="10.0" prefWidth="144.0" />
@@ -38,7 +38,6 @@
                         <Font name="System Bold" size="16.0" />
                      </font>
                   </Label>
-                  <Label fx:id="barcode" alignment="BOTTOM_CENTER" text="barcode" />
                </children>
             </HBox>
             <Label fx:id="length" layoutX="10.0" layoutY="36.0" text="Duration/Length" GridPane.rowIndex="2" />
@@ -52,16 +51,18 @@
         </columnConstraints>
         <rowConstraints>
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
             <RowConstraints />
         </rowConstraints>
          <children>
-            <Label fx:id="price" text="£00.00" GridPane.halignment="RIGHT" GridPane.hgrow="ALWAYS">
+            <Label fx:id="price" text="£00.00" GridPane.halignment="RIGHT" GridPane.hgrow="ALWAYS" GridPane.rowSpan="2">
                <GridPane.margin>
                   <Insets left="10.0" right="10.0" />
                </GridPane.margin>
             </Label>
             <Button fx:id="actionButton" mnemonicParsing="false" text="X" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.hgrow="NEVER" GridPane.rowSpan="2" GridPane.valignment="CENTER" />
-            <Spinner fx:id="quantitySelected" editable="true" initialValue="1" prefWidth="50.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" />
+            <Spinner fx:id="quantitySelected" editable="true" initialValue="1" prefWidth="50.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowSpan="2" />
+            <Label fx:id="barcode" alignment="BOTTOM_CENTER" text="barcode" GridPane.rowIndex="1" />
          </children>
       </GridPane>
    </children>

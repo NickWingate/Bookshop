@@ -1,6 +1,6 @@
 package main.java.domain.enums;
 
-public enum Condition {
+public enum Condition implements IBookProperty {
     NEW,
     USED;
 

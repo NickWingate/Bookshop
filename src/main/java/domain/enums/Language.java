@@ -1,6 +1,6 @@
 package main.java.domain.enums;
 
-public enum Language {
+public enum Language implements IBookProperty {
     ENGLISH("English"),
     FRENCH("French");
 

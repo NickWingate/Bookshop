@@ -1,6 +1,6 @@
 package main.java.domain.enums;
 
-public enum Genre {
+public enum Genre implements IBookProperty {
     POLITICS("Politics"),
     BUSINESS("Business"),
     COMPUTER_SCIENCE("Computer Science"),

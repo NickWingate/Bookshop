@@ -1,29 +1,18 @@
 package main.java.domain.entities;
 
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
+import java.util.*;
 
-public class Basket implements Iterable<Book>{
 
-    private final List<Book> books = new ArrayList<Book>();
-    @Override
-    public Iterator<Book> iterator() {
-        return books.iterator();
-    }
+public class Basket implements Iterable<Map.Entry<Book, Integer>> {
 
-    public boolean addBook(Book book){
-        // todo: should we store tuple with book quantity?
-        return books.add(book);
-    }
+    private final Map<Book, Integer> books = new HashMap<>();
 
-    public boolean removeBook(Book book){
-        return books.remove(book);
+    public void removeBook(Book book){
+        books.remove(book);
     }
 
     public boolean removeBookByBarcode(String barcode){
-        for (Book book :
-                books) {
+        for (Book book : books.keySet()) {
             if (book.getBarcode() == barcode)
             {
                 removeBook(book);
@@ -41,11 +30,15 @@ public class Basket implements Iterable<Book>{
     public double calculateTotal()
     {
         var total = 0;
-        for (Book book : books) {
-            total += book.getPrice();
+        for (var kvp : books.entrySet()) {
+            total += kvp.getKey().getPrice() * kvp.getValue();
         }
 
         return total;
     }
 
+    @Override
+    public Iterator<Map.Entry<Book, Integer>> iterator() {
+        return books.entrySet().iterator();
+    }
 }

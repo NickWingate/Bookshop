@@ -1,6 +1,6 @@
 package main.java.domain.enums;
 
-public enum BookType {
+public enum BookType implements IBookProperty {
     PAPERBACK,
     AUDIOBOOK,
     EBOOK;
