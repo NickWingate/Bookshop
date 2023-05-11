@@ -4,16 +4,22 @@ import main.java.domain.entities.Book;
 import main.java.util.interfaces.IBookParser;
 import main.java.util.interfaces.IBookRepository;
 import main.java.util.interfaces.ICSVWriter;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
+import org.springframework.stereotype.Service;
 
 import java.io.File;
 import java.util.List;
 
+@Repository
 public class BookRepository implements IBookRepository {
 
     private IBookParser _bookParser;
     private ICSVWriter<Book> _bookWriter;
     private String _stockFilePath;
 
+    @Autowired
     public BookRepository(IBookParser bookParser,
                           ICSVWriter<Book> bookWriter,
                           String stockFilePath) {

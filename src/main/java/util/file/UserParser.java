@@ -6,10 +6,12 @@ import main.java.domain.entities.Customer;
 import main.java.domain.entities.User;
 import main.java.domain.enums.Role;
 import main.java.util.interfaces.IUserParser;
+import org.springframework.stereotype.Component;
 
 import java.io.File;
 import java.util.List;
 
+@Component
 public class UserParser implements IUserParser {
     @Override
     public User ParseLine(String line) {

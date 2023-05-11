@@ -5,10 +5,12 @@ import main.java.domain.entities.Book;
 import main.java.domain.entities.EBook;
 import main.java.domain.entities.PaperbackBook;
 import main.java.util.interfaces.IBookEncoder;
+import org.springframework.stereotype.Component;
 
 import java.time.format.DateTimeFormatter;
 import java.util.List;
 
+@Component
 public class BookEncoder implements IBookEncoder {
 
     @Override

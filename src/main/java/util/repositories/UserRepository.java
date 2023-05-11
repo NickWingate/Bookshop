@@ -5,10 +5,12 @@ import main.java.domain.entities.User;
 import main.java.util.interfaces.ICSVWriter;
 import main.java.util.interfaces.IUserParser;
 import main.java.util.interfaces.IUserRepository;
+import org.springframework.stereotype.Repository;
 
 import java.io.File;
 import java.util.List;
 
+@Repository
 public class UserRepository implements IUserRepository {
 
     private IUserParser _userParser;

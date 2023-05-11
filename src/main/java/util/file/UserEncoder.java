@@ -5,7 +5,9 @@ import main.java.domain.entities.Customer;
 import main.java.domain.entities.User;
 import main.java.domain.enums.Role;
 import main.java.util.interfaces.IUserEncoder;
+import org.springframework.stereotype.Component;
 
+@Component
 public class UserEncoder implements IUserEncoder {
     @Override
     public String EncodeObject(User object) {

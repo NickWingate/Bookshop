@@ -6,6 +6,7 @@ import main.java.domain.entities.EBook;
 import main.java.domain.entities.PaperbackBook;
 import main.java.domain.enums.*;
 import main.java.util.interfaces.IBookParser;
+import org.springframework.stereotype.Component;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -17,6 +18,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+@Component
 public class BookParser implements IBookParser {
     @Override
     public Book ParseLine(String line) {

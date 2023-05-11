@@ -2,15 +2,20 @@ package main.java.util.file;
 
 import main.java.util.interfaces.ICSVEncoder;
 import main.java.util.interfaces.ICSVWriter;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.List;
 
+@Service
 public class CSVWriter<T> implements ICSVWriter<T> {
 
     private ICSVEncoder<T> _csvEncoder;
+
+    @Autowired
     public CSVWriter(ICSVEncoder<T> csvEncoder) {
         _csvEncoder = csvEncoder;
     }

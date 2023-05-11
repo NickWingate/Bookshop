@@ -11,18 +11,17 @@ import main.java.domain.enums.IBookProperty;
 import main.java.ui.controls.BookCollectionControl;
 import main.java.ui.controls.FilterControl;
 import main.java.util.file.BookEncoder;
-import main.java.util.file.BookParser;
 import main.java.util.file.CSVWriter;
-import main.java.util.interfaces.IBookCloner;
 import main.java.util.interfaces.IBookRepository;
-import main.java.util.misc.BookCloner;
-import main.java.util.repositories.BookRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 
+@Component
 public class HomeViewController implements Initializable {
 
     private IBookRepository _bookRepository;
@@ -50,11 +49,14 @@ public class HomeViewController implements Initializable {
     private ObservableList<Book> stockBooks = FXCollections.observableArrayList();
 
     private ObservableList<Book> basketBooks = FXCollections.observableArrayList();
+
+    @Autowired
+    public HomeViewController(IBookRepository bookRepository) {
+        _bookRepository = bookRepository;
+    }
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        _bookRepository = new BookRepository(new BookParser(),
-                new CSVWriter<Book>(new BookEncoder()),
-                "src/main/resources/Stock.txt");
 
         stockBooks.addAll(_bookRepository.GetAll());
 
@@ -109,11 +111,8 @@ public class HomeViewController implements Initializable {
         if (!book.getProperties().containsAll(properties))
             return false;
 
-        if (!book.getTitle().toLowerCase().contains(searchTerm.toLowerCase()) &&
-                !book.getBarcode().contains(searchTerm))
-            return false;
-
-        return true;
+        return book.getTitle().toLowerCase().contains(searchTerm.toLowerCase()) ||
+                book.getBarcode().contains(searchTerm);
     }
 
     public ObservableList<Book> getStockBooks() {
