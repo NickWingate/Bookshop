@@ -7,16 +7,28 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3138a3d4-7ee9-431a-a3c6-37b1267a4902" name="Changes" comment="Fully implement UserRepository">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/fxml/test.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="3138a3d4-7ee9-431a-a3c6-37b1267a4902" name="Changes" comment="Implement Book filtering and basic basket functionallity">
+      <change afterPath="$PROJECT_DIR$/src/main/java/config/AppConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/domain/entities/Filter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ui/common/interfaces/IAddBookAction.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ui/controllers/AdminViewController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ui/controls/AddBookControl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/util/interfaces/IBookCloner.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/util/misc/BookCloner.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/fxml/AdminView.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/fxml/controls/AddBookControl.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Bookshop.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Bookshop.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ui/controllers/HomeViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ui/controllers/HomeViewController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/util/file/BookEncoder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/util/file/BookEncoder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/util/file/BookParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/util/file/BookParser.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/util/file/CSVWriter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/util/file/CSVWriter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/util/interfaces/ICSVParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/util/interfaces/ICSVParser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/util/file/UserEncoder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/util/file/UserEncoder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/util/file/UserParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/util/file/UserParser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/util/repositories/BookRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/util/repositories/BookRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/util/repositories/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/util/repositories/UserRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/Stock.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Stock.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/UserAccounts.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/UserAccounts.txt" afterDir="false" />
     </list>
@@ -33,23 +45,24 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Enum" />
-        <option value="Interface" />
         <option value="JUnit5 Test Class" />
-        <option value="Class" />
         <option value="JavaFXApplication" />
+        <option value="CSS File" />
+        <option value="Enum" />
         <option value="FxmlFile" />
+        <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;
   }
-}]]></component>
+}</component>
   <component name="GithubPullRequestsUISettings">
     <option name="selectedUrlAndAccountId">
       <UrlAndAccount>
@@ -85,26 +98,34 @@
     "create.test.in.the.same.root": "true",
     "jdk.selected.JAVA_MODULE": "19",
     "last_directory_selection": "C:/Users/Nick/Documents/Programming/COA256/Bookshop/Domain/src/Entities",
-    "last_opened_file_path": "C:/Users/Nick/.jdks/javafx-sdk-20/lib",
+    "last_opened_file_path": "C:/Users/Nick/Documents/Programming/COA256/Bookshop/src/main/resources/fxml/controls",
+    "list.type.of.created.stylesheet": "CSS",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Libraries",
+    "project.structure.last.edited": "Global Libraries",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
     "run.code.analysis.last.selected.profile": "pProject Default",
-    "settings.editor.selected.configurable": "preferences.JavaFX",
+    "settings.editor.selected.configurable": "profiler.jvm",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
+      <recent name="main.java.ui.common.interfaces" />
       <recent name="main.java.util.interfaces" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Nick\Documents\Programming\COA256\Bookshop\src\main\resources\fxml\controls" />
     </key>
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Nick\Documents\Programming\COA256\Bookshop\src\main\resources\fxml" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="main.java.util.repositories" />
@@ -139,7 +160,7 @@
     <configuration name="main.Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="main.Main" />
       <module name="Bookshop" />
-      <option name="VM_PARAMETERS" value="--module-path &quot;C:\Users\Nick\.jdks\javafx-sdk-20\lib&quot; --add-modules=javafx.base,javafx.controls,javafx.graphics,javafx.media" />
+      <option name="VM_PARAMETERS" value="--module-path &quot;C:\Users\Nick\.jdks\javafx-sdk-20\lib&quot; --add-modules=javafx.base,javafx.controls,javafx.graphics,javafx.media,javafx.fxml" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="main.*" />
@@ -222,8 +243,8 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.main.Main" />
-        <item itemvalue="JUnit.UserEncoderTest" />
         <item itemvalue="JUnit.test.java.util.file in Bookshop" />
+        <item itemvalue="JUnit.UserEncoderTest" />
         <item itemvalue="JUnit.BookEncoderTest.encodeObject_shouldEncodeAudioBook" />
         <item itemvalue="JUnit.BookParserTest.parseLine_shouldReturnAudioBook" />
       </list>
@@ -238,7 +259,11 @@
       <option name="presentableId" value="Default" />
       <updated>1678289888009</updated>
       <workItem from="1678289889212" duration="24444000" />
-      <workItem from="1680803437977" duration="21039000" />
+      <workItem from="1680803437977" duration="26691000" />
+      <workItem from="1681233703370" duration="2464000" />
+      <workItem from="1681236280655" duration="909000" />
+      <workItem from="1681344024395" duration="24026000" />
+      <workItem from="1682431297864" duration="55180000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Commit">
       <created>1678290087197</created>
@@ -436,7 +461,91 @@
       <option name="project" value="LOCAL" />
       <updated>1681212816231</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="Increase error catching verbosity">
+      <created>1681227466540</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1681227466540</updated>
+    </task>
+    <task id="LOCAL-00030" summary="Add JavaFx to project">
+      <created>1681227517982</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1681227517982</updated>
+    </task>
+    <task id="LOCAL-00031" summary="Add basic ui controls and controllers">
+      <created>1681689656422</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1681689656423</updated>
+    </task>
+    <task id="LOCAL-00032" summary="Remove test code from BookCollectionControl">
+      <created>1681690094627</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1681690094627</updated>
+    </task>
+    <task id="LOCAL-00033" summary="Remove test code from BookCollectionControl">
+      <created>1681690123391</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1681690123391</updated>
+    </task>
+    <task id="LOCAL-00034" summary="Remove test code from BookCollectionControl">
+      <created>1681690144525</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1681690144525</updated>
+    </task>
+    <task id="LOCAL-00035" summary="Add search functionality">
+      <created>1681754629990</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1681754629990</updated>
+    </task>
+    <task id="LOCAL-00036" summary="Optimize out BigDecimal with doubles&#10;&#10;Significantly faster, likely 2 or 3 orders&#10;of magnitude see https://qr.ae/prfYbc">
+      <created>1681755524022</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1681755524022</updated>
+    </task>
+    <task id="LOCAL-00037" summary="Optimize rebuilding books&#10;&#10;Majority of time was spent loading in BookControl every rebuild.&#10;Now once the BookControl is built we &#10;store it in a list.">
+      <created>1682434273751</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1682434273751</updated>
+    </task>
+    <task id="LOCAL-00038" summary="Make book quantity property and bind in fxml">
+      <created>1682519083785</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1682519083785</updated>
+    </task>
+    <task id="LOCAL-00039" summary="Create abstract BookControlBase and new SmallBookControl for checkout">
+      <created>1683216675230</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1683216675230</updated>
+    </task>
+    <task id="LOCAL-00040" summary="Implement Book filtering and basic basket functionallity">
+      <created>1683738868849</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1683738868849</updated>
+    </task>
+    <option name="localTasksCounter" value="41" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -455,17 +564,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Add user and address domain entity" />
-    <MESSAGE value="Add user children: admin and customer&#10;&#10;Also add iterable basket type" />
-    <MESSAGE value="Scaffold repository intefaces" />
-    <MESSAGE value="Scaffold repository interfaces" />
-    <MESSAGE value="Refactor Book.java to POCO object&#10;&#10;All attrs have getter/setter and we have&#10;empty constructor" />
-    <MESSAGE value="Specify BookType in each Book.java sub-class" />
-    <MESSAGE value="Use LocalDate instead of Date in Book.java&#10;&#10;Newer and easier string conversion" />
-    <MESSAGE value="Use LocalDate instead of Date in Book subclasses" />
-    <MESSAGE value="Require id to fetch single book" />
-    <MESSAGE value="Restructure project&#10;&#10;Move all into one module and organise&#10;by package" />
-    <MESSAGE value="Add example system data" />
     <MESSAGE value="Create and implement csv book parser" />
     <MESSAGE value="Create and implement csv user parser" />
     <MESSAGE value="Use AssertJ for assertions" />
@@ -480,43 +578,56 @@
     <MESSAGE value="Add user encoder and unit tests" />
     <MESSAGE value="Fully implement BookRepository" />
     <MESSAGE value="Fully implement UserRepository" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fully implement UserRepository" />
+    <MESSAGE value="Increase error catching verbosity" />
+    <MESSAGE value="Add JavaFx to project" />
+    <MESSAGE value="Add basic ui controls and controllers" />
+    <MESSAGE value="Remove test code from BookCollectionControl" />
+    <MESSAGE value="Add search functionallity" />
+    <MESSAGE value="Add search functionality" />
+    <MESSAGE value="Optimize out BigDecimal with doubles&#10;&#10;Significantly faster, likely 2 or 3 orders&#10;of magnitude see https://qr.ae/prfYbc" />
+    <MESSAGE value="Optimize rebuilding books&#10;&#10;Majority of time was spent loading in BookControl every rebuild.&#10;Now once the BookControl is built we &#10;store it in a list." />
+    <MESSAGE value="Make book quantity property and bind in fxml" />
+    <MESSAGE value="Create abstract BookControlBase and new SmallBookControl for checkout" />
+    <MESSAGE value="Implement Book filtering and basic basket functionallity" />
+    <option name="LAST_COMMIT_MESSAGE" value="Implement Book filtering and basic basket functionallity" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Main.java</url>
-          <line>28</line>
+          <line>27</line>
           <option name="timeStamp" value="25" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Main.java</url>
-          <line>23</line>
+          <line>22</line>
           <option name="timeStamp" value="26" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Main.java</url>
-          <line>21</line>
+          <line>20</line>
           <option name="timeStamp" value="27" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Main.java</url>
-          <line>33</line>
+          <line>32</line>
           <option name="timeStamp" value="28" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Main.java</url>
-          <line>36</line>
+          <line>35</line>
           <option name="timeStamp" value="29" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/Main.java</url>
-          <line>17</line>
-          <option name="timeStamp" value="30" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+    <pin-to-top-manager>
+      <pinned-members>
+        <PinnedItemInfo parentTag="main.java.domain.entities.PaperbackBook" memberName="title" />
+        <PinnedItemInfo parentTag="javafx.scene.Node$3" memberName="value" />
+        <PinnedItemInfo parentTag="main.java.ui.controls.BookCollectionControl" memberName="id" />
+      </pinned-members>
+    </pin-to-top-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
