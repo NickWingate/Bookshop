@@ -7,6 +7,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import main.java.domain.entities.Book;
+import main.java.domain.entities.Filter;
 import main.java.domain.enums.IBookProperty;
 import main.java.ui.controls.BookCollectionControl;
 import main.java.ui.controls.FilterControl;
@@ -35,7 +36,7 @@ public class HomeViewController implements Initializable {
     @FXML
     private FilterControl filterControl;
 
-    private List<IBookProperty> selectedProperties = new ArrayList<>();
+    private Filter selectedProperties;
 
     @FXML
     private Button addBook;
@@ -62,7 +63,7 @@ public class HomeViewController implements Initializable {
 
         bookStockControl.setActionButtonFunction((Book book, int quantity) -> addToBasket(book, quantity));
         basketControl.setActionButtonFunction((Book book, int quantity) -> removeFromBasket(book));
-        filterControl.setFilterChangedEvent((List<IBookProperty> properties) -> searchBooks(searchField.getText() ,properties));
+        filterControl.setFilterChangedEvent((filter) -> searchBooks(searchField.getText() ,filter));
 
         searchField.textProperty().addListener(((observableValue, oldValue, newValue) -> searchBooks(newValue, selectedProperties)));
     }
@@ -87,13 +88,13 @@ public class HomeViewController implements Initializable {
         basketBooks.add(book);
     }
 
-    private void searchBooks(String searchTerm, List<IBookProperty> properties) {
+    private void searchBooks(String searchTerm, Filter properties) {
         selectedProperties = properties;
         stockBooks.clear();
 
         var allBooks = _bookRepository.GetAll();
 
-        if (searchTerm.equals("") && properties.isEmpty()) {
+        if (searchTerm.equals("") && (properties == null || properties.isEmpty()) ) {
             stockBooks.addAll(allBooks);
             return;
         }
@@ -107,8 +108,8 @@ public class HomeViewController implements Initializable {
         stockBooks.addAll(matchingBooks);
     }
 
-    private static boolean bookMeetsConditions(Book book, String searchTerm, List<IBookProperty> properties) {
-        if (!book.getProperties().containsAll(properties))
+    private static boolean bookMeetsConditions(Book book, String searchTerm, Filter properties) {
+        if (!properties.meetsConditions(book))
             return false;
 
         return book.getTitle().toLowerCase().contains(searchTerm.toLowerCase()) ||

@@ -4,12 +4,10 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.*;
 import javafx.scene.layout.*;
-import javafx.scene.text.Text;
 import javafx.stage.*;
 import main.java.config.AppConfig;
-import org.springframework.boot.SpringApplication;
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.ConfigurableApplicationContext;
+import main.java.ui.common.interfaces.ISceneManager;
+import main.java.ui.common.misc.BookshopScene;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 import java.io.IOException;
@@ -17,6 +15,7 @@ import java.io.IOException;
 public class Main extends Application {
 
     private AnnotationConfigApplicationContext context;
+    private ISceneManager _sceneManager;
 
     public static void main(String[] args) {
         launch(args);
@@ -31,15 +30,14 @@ public class Main extends Application {
 
     @Override
     public void start(Stage stage) {
-        var loader = new FXMLLoader(getClass().getResource("resources/fxml/HomeView.fxml"));
-        loader.setControllerFactory(context::getBean);
-        try {
-            Pane pane = loader.load();
-            stage.setScene(new Scene(pane, 1080, 720));
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
 
-        stage.show();
+        _sceneManager = context.getBean(ISceneManager.class, stage);
+
+        _sceneManager.registerScene("login", getClass().getResource("resources/fxml/LoginView.fxml"));
+        _sceneManager.registerScene("home", getClass().getResource("resources/fxml/HomeView.fxml"));
+        _sceneManager.registerScene("admin", getClass().getResource("resources/fxml/AdminView.fxml"));
+
+        _sceneManager.switchScene("login");
+
     }
 }

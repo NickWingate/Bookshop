@@ -8,13 +8,13 @@ import javafx.scene.Node;
 import javafx.scene.control.CheckBox;
 import javafx.scene.layout.VBox;
 import main.java.domain.entities.Filter;
-import main.java.domain.enums.BookType;
-import main.java.domain.enums.IBookProperty;
-import main.java.domain.enums.Language;
+import main.java.domain.enums.*;
 import main.java.ui.common.interfaces.IFilterChangedEvent;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class FilterControl extends VBox {
 
@@ -33,9 +33,15 @@ public class FilterControl extends VBox {
     @FXML
     private CheckBox ebookToggle;
 
+    @FXML
+    private CheckBox newToggle, usedToggle, epubToggle, mobiToggle, pdfToggle, mp3Toggle, wmaToggle, aacToggle;
+
+    private Map<CheckBox, IBookProperty> togglePropertyMap;
+
+
     private IFilterChangedEvent filterChangedEvent;
 
-    private List<IBookProperty> selectedProperties = new ArrayList<>();
+    private Filter selectedProperties = new Filter();
     public FilterControl() {
         super();
 
@@ -52,13 +58,31 @@ public class FilterControl extends VBox {
             System.out.println(e.getMessage());
         }
 
+        initToggleMap();
         setCheckBoxEvents();
     }
 
-    private void setCheckBoxEvents() {
-        var toggles = new CheckBox[] { englishToggle, frenchToggle, paperbackToggle, ebookToggle, audiobookToggle };
+    private void initToggleMap() {
+        togglePropertyMap = Map.ofEntries(
+                Map.entry(englishToggle, Language.ENGLISH),
+                Map.entry(frenchToggle, Language.FRENCH),
+                Map.entry(paperbackToggle, BookType.PAPERBACK),
+                Map.entry(ebookToggle, BookType.EBOOK),
+                Map.entry(audiobookToggle, BookType.AUDIOBOOK),
+                Map.entry(newToggle, Condition.NEW),
+                Map.entry(usedToggle, Condition.USED),
+                Map.entry(epubToggle, EBookFormat.EPUB),
+                Map.entry(mobiToggle, EBookFormat.MOBI),
+                Map.entry(pdfToggle, EBookFormat.PDF),
+                Map.entry(mp3Toggle, AudioFormat.MP3),
+                Map.entry(wmaToggle, AudioFormat.WMA),
+                Map.entry(aacToggle, AudioFormat.AAC))
+        ;
+    }
 
-        for (var toggle : toggles) {
+    private void setCheckBoxEvents() {
+
+        for (var toggle : togglePropertyMap.keySet()) {
             var eventHandler = new EventHandler<ActionEvent>() {
                 @Override
                 public void handle(ActionEvent actionEvent) {
@@ -71,18 +95,24 @@ public class FilterControl extends VBox {
         }
     }
 
+
     private void updateSelectedPropertiesList() {
         selectedProperties.clear();
-        if (englishToggle.isSelected())
-            selectedProperties.add(Language.ENGLISH);
-        if (frenchToggle.isSelected())
-            selectedProperties.add(Language.FRENCH);
-        if (paperbackToggle.isSelected())
-            selectedProperties.add(BookType.PAPERBACK);
-        if (audiobookToggle.isSelected())
-            selectedProperties.add(BookType.AUDIOBOOK);
-        if (ebookToggle.isSelected())
-            selectedProperties.add(BookType.EBOOK);
+        for (var kvp : togglePropertyMap.entrySet()) {
+            if (kvp.getKey().isSelected()) {
+                selectedProperties.addFilter(kvp.getValue());
+            }
+        }
+//        if (englishToggle.isSelected())
+//            selectedProperties.add(Language.ENGLISH);
+//        if (frenchToggle.isSelected())
+//            selectedProperties.add(Language.FRENCH);
+//        if (paperbackToggle.isSelected())
+//            selectedProperties.add(BookType.PAPERBACK);
+//        if (audiobookToggle.isSelected())
+//            selectedProperties.add(BookType.AUDIOBOOK);
+//        if (ebookToggle.isSelected())
+//            selectedProperties.add(BookType.EBOOK);
     }
 
     public void setFilterChangedEvent(IFilterChangedEvent event) {

@@ -198,5 +198,24 @@
             </Label>
          </top>
       </BorderPane>
+      <TreeView editable="true">
+         <root>
+            <CheckBoxTreeItem value="Total list" expanded="true">
+               <children>
+                  <CheckBoxTreeItem value="List 1"/>
+                  <CheckBoxTreeItem value="List 2"/>
+                  <CheckBoxTreeItem value="List 3"/>
+                  <CheckBoxTreeItem value="List 4"/>
+                  <CheckBoxTreeItem value="List 5"/>
+                  <CheckBoxTreeItem value="List 6"/>
+                  <CheckBoxTreeItem value="List 7"/>
+                  <CheckBoxTreeItem value="List 8"/>
+               </children>
+            </CheckBoxTreeItem>
+         </root>
+         <cellFactory>
+         </cellFactory>
+      </TreeView>
+
    </children>
 </VBox>
