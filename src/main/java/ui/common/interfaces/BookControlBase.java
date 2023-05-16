@@ -1,7 +1,10 @@
 package main.java.ui.common.interfaces;
 
+import javafx.beans.InvalidationListener;
+import javafx.beans.property.IntegerProperty;
 import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.SimpleObjectProperty;
+import javafx.beans.value.ChangeListener;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -94,7 +97,7 @@ public abstract class BookControlBase extends GridPane {
             @Override
             public void handle(ActionEvent actionEvent) {
                 func.onEvent(book.get(), (Integer) quantitySelected.getValue());
-                updateSpinner();
+                //updateSpinner();
             }
         };
         actionButton.setOnAction(eventHandler);
@@ -106,5 +109,11 @@ public abstract class BookControlBase extends GridPane {
                 book.get().getQuantity(),
                 book.get().getQuantitySelected()
         ));
+
+        quantitySelected.getValueFactory().valueProperty().bindBidirectional(book.get().quantitySelected());
+    }
+
+    public void setQuantityListener(ChangeListener<? super Number> quantityListener) {
+        book.get().quantitySelected().addListener(quantityListener);
     }
 }

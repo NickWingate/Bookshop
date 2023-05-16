@@ -61,7 +61,7 @@
                </GridPane.margin>
             </Label>
             <Button fx:id="actionButton" mnemonicParsing="false" text="X" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.hgrow="NEVER" GridPane.rowSpan="2" GridPane.valignment="CENTER" />
-            <Spinner fx:id="quantitySelected" editable="true" initialValue="1" prefWidth="50.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowSpan="2" />
+            <Spinner fx:id="quantitySelected" initialValue="1" prefWidth="50.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowSpan="2" />
             <Label fx:id="barcode" alignment="BOTTOM_CENTER" text="barcode" GridPane.rowIndex="1" />
          </children>
       </GridPane>

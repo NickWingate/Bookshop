@@ -1,8 +1,10 @@
 package main.java.ui.controls;
 
 import javafx.beans.property.*;
+import javafx.beans.value.ChangeListener;
 import javafx.collections.ListChangeListener.Change;
 import javafx.collections.ObservableList;
+import javafx.concurrent.Task;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -27,6 +29,8 @@ public class BookCollectionControl extends GridPane {
     private ArrayList<BookControlBase> bookControls = new ArrayList<>();
 
     private IBookControlAction actionButtonFunction;
+
+    private ChangeListener<? super Number> quantityListener;
 
 
     public BookCollectionControl() {
@@ -59,12 +63,25 @@ public class BookCollectionControl extends GridPane {
     private void rebuildBooks(Change change) {
         bookBox.getChildren().clear();
         for (var book : books) {
-            var bookControl = getBookControl(book);
-            bookBox.getChildren().add(bookControl);
+            var loadBookTask = new Task<BookControlBase>() {
+                @Override
+                protected BookControlBase call() throws Exception {
+                    return getBookControl(book);
+                }
+            };
+            loadBookTask.setOnSucceeded(e -> {
+                bookBox.getChildren().add(loadBookTask.getValue());
+            });
+            loadBookTask.setOnFailed(e -> {
+                loadBookTask.getException().printStackTrace();
+            });
+
+            var thread = new Thread(loadBookTask);
+            thread.start();
         }
     }
 
-    private void forceRebuildBooks(){
+    public void forceRebuildBooks(){
         bookControls.clear();
         rebuildBooks(null);
     }
@@ -81,6 +98,9 @@ public class BookCollectionControl extends GridPane {
 
         if (actionButtonFunction != null){
             bookControl.setActionButtonEvent(actionButtonFunction);
+        }
+        if (quantityListener != null) {
+            bookControl.setQuantityListener(quantityListener);
         }
 
         bookControls.add(bookControl);
@@ -126,5 +146,9 @@ public class BookCollectionControl extends GridPane {
     public final String getBookControlType() {
         var s = bookControlTypeProperty().get();
         return s == null ? "" : s;
+    }
+
+    public void setQuantityListener(ChangeListener<? super Number> quantityListener) {
+        this.quantityListener = quantityListener;
     }
 }

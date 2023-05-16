@@ -13,25 +13,26 @@
         <RowConstraints />
         <RowConstraints />
         <RowConstraints />
+        <RowConstraints vgrow="NEVER"/>
     </rowConstraints>
    <children>
-       <Button text="Back" />
+       <Button text="Logout" fx:id="logoutBtn" GridPane.halignment="RIGHT"/>
 
-      <TableView prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1">
+      <TableView fx:id="booksTbl" prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1" GridPane.halignment="CENTER">
         <columns>
-          <TableColumn text="Barcode" />
-          <TableColumn text="Title" />
-          <TableColumn text="Language" />
-          <TableColumn text="Genre" />
-          <TableColumn text="Release Date" />
-          <TableColumn text="Quantity in Stock" />
-          <TableColumn text="Retail Price" />
-          <TableColumn text="Type" />
-          <TableColumn text="Length" />
+          <TableColumn fx:id="barcode" text="Barcode" />
+          <TableColumn fx:id="title" text="Title" maxWidth="200"/>
+          <TableColumn fx:id="language" text="Language" />
+          <TableColumn fx:id="genre" text="Genre" />
+          <TableColumn fx:id="date" text="Release Date" />
+          <TableColumn fx:id="quantity" text="Quantity in Stock"  />
+          <TableColumn fx:id="price" text="Retail Price" />
+          <TableColumn fx:id="type" text="Type" />
+          <TableColumn fx:id="length" text="Length" />
         </columns>
       </TableView>
 
-       <AddBookControl fx:id="addBookControl" GridPane.rowIndex="2"/>
+       <AddBookControl fx:id="addBookControl" GridPane.rowIndex="2" GridPane.halignment="CENTER"/>
    </children>
    <padding>
       <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />

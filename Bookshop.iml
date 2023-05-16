@@ -25,7 +25,7 @@
     </orderEntry>
     <orderEntry type="library" name="google.code.maven.play.plugin.eamelink.mockito.all" level="application" />
     <orderEntry type="library" name="assertj.core" level="application" />
-    <orderEntry type="library" name="lib" level="project" />
-    <orderEntry type="library" name="springframework.boot.spring" level="application" />
+    <orderEntry type="library" exported="" name="lib" level="project" />
+    <orderEntry type="library" exported="" name="springframework.boot.spring" level="application" />
   </component>
 </module>

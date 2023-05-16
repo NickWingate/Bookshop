@@ -29,7 +29,7 @@ public class UserParser implements IUserParser {
             case CUSTOMER -> user = new Customer();
         }
 
-        user.setId(Integer.valueOf(values[0]));
+        user.setId(values[0]);
         user.setUsername(values[1]);
         user.setSurname(values[2]);
 

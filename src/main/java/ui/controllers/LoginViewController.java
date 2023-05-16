@@ -7,6 +7,7 @@ import javafx.scene.control.ChoiceBox;
 import javafx.util.StringConverter;
 import main.java.domain.entities.User;
 import main.java.ui.common.interfaces.ISceneManager;
+import main.java.util.interfaces.IAuthManager;
 import main.java.util.interfaces.IUserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -26,14 +27,17 @@ public class LoginViewController implements Initializable {
 
     @FXML
     private Button loginBtn;
+    private IAuthManager _authManager;
 
     @Autowired
     public LoginViewController(IUserRepository userRepository,
                                ISceneManager sceneManager,
-                               StringConverter<User> userStringConverter) {
+                               StringConverter<User> userStringConverter,
+                               IAuthManager authManager) {
         _userRepository = userRepository;
         _sceneManager = sceneManager;
         _userStringConverter = userStringConverter;
+        _authManager = authManager;
     }
 
     @Override
@@ -45,6 +49,7 @@ public class LoginViewController implements Initializable {
 
     private void login() {
         var user = userChoiceBox.getValue();
+        _authManager.login(user);
         switch (user.getRole()){
             case CUSTOMER -> _sceneManager.switchScene("home");
             case ADMIN -> _sceneManager.switchScene("admin");

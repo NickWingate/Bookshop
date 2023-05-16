@@ -3,7 +3,7 @@ package main.java.domain.entities;
 import main.java.domain.enums.Role;
 
 public class Admin extends User{
-    public Admin(int id,
+    public Admin(String id,
                  String username,
                  String surname,
                  Address address) {

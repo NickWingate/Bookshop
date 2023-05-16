@@ -35,7 +35,7 @@ public class UserRepository implements IUserRepository {
         var users = GetAll();
 
         for (var user : users) {
-            if (user.getId() == Integer.valueOf(id)){
+            if (user.getId().equals(id)){
                 return user;
             }
         }
@@ -57,7 +57,7 @@ public class UserRepository implements IUserRepository {
         var users = GetAll();
 
         for (int i = 0; i < users.size(); i++) {
-            if (users.get(i).getId() == Integer.valueOf(id)){
+            if (users.get(i).getId().equals(id)){
                 users.set(i, entity);
             }
         }
@@ -70,7 +70,7 @@ public class UserRepository implements IUserRepository {
         var users = GetAll();
 
         for (int i = 0; i < users.size(); i++) {
-            if (users.get(i).getId() == Integer.valueOf(id)){
+            if (users.get(i).getId().equals(id)){
                 users.remove(i);
             }
         }

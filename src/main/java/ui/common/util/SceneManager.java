@@ -1,5 +1,7 @@
 package main.java.ui.common.util;
 
+import javafx.application.Platform;
+import javafx.concurrent.Task;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -16,7 +18,8 @@ import java.util.Map;
 
 @Component
 public class SceneManager implements ISceneManager {
-    private Map<String, Parent> sceneMap = new HashMap<>();
+    //private Map<String, Parent> sceneMap = new HashMap<>();
+    private Map<String, URL> sceneMap = new HashMap<>();
     private Stage mainStage;
 
     private ApplicationContext context;
@@ -29,33 +32,46 @@ public class SceneManager implements ISceneManager {
 
     @Override
     public void switchScene(String key) {
-        var scene = prepareScene(sceneMap.get(key));
+        var prepSceneTask = new Task<Scene>() {
+            @Override
+            protected Scene call() throws Exception {
+                return prepareScene(sceneMap.get(key));
+            }
+        };
 
-        mainStage.setScene(scene);
-        mainStage.sizeToScene();
+        prepSceneTask.setOnSucceeded(e -> {
+            mainStage.setScene(prepSceneTask.getValue());
 
-        mainStage.show();
+            mainStage.show();
+        });
+
+        prepSceneTask.setOnFailed(e -> {
+            prepSceneTask.getException().printStackTrace();
+        });
+
+        Platform.runLater(new Thread(prepSceneTask));
+
     }
 
-    private Scene prepareScene(Parent pane) {
-        var scene = mainStage.getScene();
+    private Scene prepareScene(URL fxmlUrl) {
+        try {
+            var pane = loadScene(fxmlUrl);
+            var scene = mainStage.getScene();
 
-        if (scene == null) {
-            return new Scene(pane);
+            if (scene == null) {
+                return new Scene(pane);
+            }
+
+            scene.setRoot(pane);
+            return scene;
+        } catch (IOException e) {
+            throw new RuntimeException(e);
         }
-
-        scene.setRoot(pane);
-        return scene;
     }
 
     @Override
     public void registerScene(String key, URL fxmlUrl) {
-        try {
-            var scene = loadScene(fxmlUrl);
-            sceneMap.put(key, scene);
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
+        sceneMap.put(key, fxmlUrl);
     }
 
     private Parent loadScene(URL fxmlUrl) throws IOException {

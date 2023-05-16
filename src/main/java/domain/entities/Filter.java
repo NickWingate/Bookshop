@@ -20,6 +20,8 @@ public class Filter {
 
     private List<AudioFormat> audioFormats;
 
+    private float minDuration;
+
 
     public Filter() {
         bookTypes = new ArrayList<>();
@@ -28,6 +30,7 @@ public class Filter {
         conditions = new ArrayList<>();
         eBookFormats = new ArrayList<>();
         audioFormats = new ArrayList<>();
+        minDuration = 0f;
     }
 
     public void addFilter(IBookProperty filter) {
@@ -69,6 +72,10 @@ public class Filter {
 
     public void addFilter(AudioFormat filter) {
         audioFormats.add(filter);
+    }
+
+    public void setMinDuration(float minDuration) {
+        this.minDuration = minDuration;
     }
 
     public void removeFilter(BookType filter) {
@@ -113,38 +120,42 @@ public class Filter {
 
     public boolean meetsConditions(Book book) {
 
+        if (!languages.contains(book.getLanguage()) && !languages.isEmpty()){
+            return false;
+        }
+
+        if (!genres.contains(book.getGenre()) && !genres.isEmpty()) {
+            return false;
+        }
+
+        if (!bookTypes.contains(book.getBookType()) && !bookTypes.isEmpty()) {
+            return false;
+        }
+
+
         switch (book.getBookType()) {
             case PAPERBACK:
                 if (!conditions.isEmpty() && !conditions.contains(((PaperbackBook) book).getCondition())) {
-                    bookTypes.add(BookType.PAPERBACK);
                     return false;
                 }
                 break;
 
             case AUDIOBOOK:
                 if (!audioFormats.isEmpty() && !audioFormats.contains(((AudioBook) book).getFormat())) {
-                    bookTypes.add(BookType.AUDIOBOOK);
+                    return false;
+                }
+                if (((AudioBook) book).getDuration() < minDuration) {
                     return false;
                 }
                 break;
 
             case EBOOK:
                 if (!eBookFormats.isEmpty() && !eBookFormats.contains(((EBook) book).getFormat())) {
-                    bookTypes.add(BookType.EBOOK);
                     return false;
                 }
                 break;
 
         }
-
-        if (!bookTypes.isEmpty() && !bookTypes.contains(book.getBookType()))
-            return false;
-
-        if (!genres.isEmpty() && !genres.contains(book.getGenre()))
-            return false;
-
-        if (!languages.isEmpty() && !languages.contains(book.getLanguage()))
-            return false;
 
         return true;
     }

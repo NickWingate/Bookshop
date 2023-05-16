@@ -91,7 +91,7 @@
                </padding>
             </Label>
             <Button fx:id="actionButton" mnemonicParsing="false" text="Add to Basket" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowSpan="2" GridPane.valignment="CENTER" />
-            <Spinner fx:id="quantitySelected" editable="true" initialValue="1" prefWidth="50.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
+            <Spinner fx:id="quantitySelected" initialValue="1" prefWidth="50.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
          </children>
       </GridPane>
    </children>

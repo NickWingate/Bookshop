@@ -4,7 +4,7 @@ package main.java.domain.entities;
 import main.java.domain.enums.Role;
 
 public abstract class User {
-    public User(int id,
+    public User(String id,
                 String username,
                 String surname,
                 Address address) {
@@ -18,18 +18,18 @@ public abstract class User {
 
     }
 
-    private int id;
+    private String id;
     private String username;
     private String surname;
     private Address address;
 
     public abstract Role getRole();
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 

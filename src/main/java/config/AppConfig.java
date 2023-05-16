@@ -12,6 +12,7 @@ import main.java.ui.controllers.HomeViewController;
 import main.java.ui.controllers.LoginViewController;
 import main.java.util.file.*;
 import main.java.util.interfaces.*;
+import main.java.util.misc.AuthManager;
 import main.java.util.repositories.BookRepository;
 import main.java.util.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -86,23 +87,33 @@ public class AppConfig {
     }
 
     @Bean
-    @Scope(value = "prototype")
-    public HomeViewController homeViewController(IBookRepository bookRepository) {
-        return new HomeViewController(bookRepository);
+    @Scope(value = "singleton")
+    public IAuthManager authManager() {
+        return new AuthManager();
     }
 
     @Bean
     @Scope(value = "prototype")
-    public AdminViewController adminViewController(IBookRepository bookRepository) {
-        return new AdminViewController(bookRepository);
+    public HomeViewController homeViewController(IBookRepository bookRepository,
+                                                 IUserRepository userRepository,
+                                                 IAuthManager authManager,
+                                                 ISceneManager sceneManager) {
+        return new HomeViewController(bookRepository, userRepository, authManager, sceneManager);
+    }
+
+    @Bean
+    @Scope(value = "prototype")
+    public AdminViewController adminViewController(IBookRepository bookRepository, IAuthManager authManager, ISceneManager sceneManager) {
+        return new AdminViewController(bookRepository, authManager, sceneManager);
     }
 
     @Bean
     @Scope(value = "prototype")
     public LoginViewController loginViewController(IUserRepository userRepository,
                                                    ISceneManager sceneManager,
-                                                   StringConverter<User> userStringConverter) {
-        return new LoginViewController(userRepository, sceneManager, userStringConverter);
+                                                   StringConverter<User> userStringConverter,
+                                                   IAuthManager authManager) {
+        return new LoginViewController(userRepository, sceneManager, userStringConverter, authManager);
     }
 
     @Bean

@@ -1,21 +1,23 @@
 package main.java.domain.entities;
 
+import javafx.beans.property.SimpleDoubleProperty;
 import main.java.domain.enums.Role;
 
 public class Customer extends User{
-    public Customer(int id,
+    public Customer(String id,
                     String username,
                     String surname,
                     Address address,
                     double creditBalance) {
         super(id, username, surname, address);
-        this.creditBalance = creditBalance;
+        this.creditBalance.set(creditBalance);
     }
 
     public Customer(){
 
     }
-    private double creditBalance;
+
+    private SimpleDoubleProperty creditBalance = new SimpleDoubleProperty(this, "creditBalance");
 
     private Basket basket = new Basket();
 
@@ -30,14 +32,18 @@ public class Customer extends User{
     }
 
     public double getCreditBalance() {
-        return creditBalance;
+        return creditBalance.get();
     }
 
     public void setCreditBalance(double creditBalance) {
-        this.creditBalance = creditBalance;
+        this.creditBalance.set(creditBalance);
+    }
+
+    public SimpleDoubleProperty creditBalanceProperty() {
+        return creditBalance;
     }
 
     public void incrementCreditBalance(double amount) {
-        creditBalance += amount;
+        creditBalance.set((double) (creditBalance.get() + (amount)));
     }
 }

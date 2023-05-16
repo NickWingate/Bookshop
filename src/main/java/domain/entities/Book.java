@@ -142,6 +142,10 @@ public abstract class Book {
         return quantitySelected.get();
     }
 
+    public IntegerProperty quantitySelected() {
+        return quantitySelected;
+    }
+
     public void setQuantitySelected(int quantitySelected) {
         this.quantitySelected.set(quantitySelected);
     }

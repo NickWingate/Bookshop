@@ -3,34 +3,55 @@
   <component name="AnalysisUIOptions">
     <option name="ANALYZE_INJECTED_CODE" value="false" />
   </component>
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="Bookshop:jar" />
+    </artifacts-to-build>
+  </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3138a3d4-7ee9-431a-a3c6-37b1267a4902" name="Changes" comment="Implement Book filtering and basic basket functionallity">
-      <change afterPath="$PROJECT_DIR$/src/main/java/config/AppConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/domain/entities/Filter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ui/common/interfaces/IAddBookAction.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ui/controllers/AdminViewController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ui/controls/AddBookControl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/util/interfaces/IBookCloner.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/util/misc/BookCloner.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/fxml/AdminView.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/fxml/controls/AddBookControl.fxml" afterDir="false" />
+    <list default="true" id="3138a3d4-7ee9-431a-a3c6-37b1267a4902" name="Changes" comment="Create LoginView.fxml and navigation/scenemanager">
+      <change afterPath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/GUIStarter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ui/common/interfaces/IValidateBookAction.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ui/controls/BasketControl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/util/interfaces/IAuthManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/util/misc/AuthManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/StockBackup.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Bookshop.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Bookshop.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/config/AppConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/config/AppConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/domain/entities/Address.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/domain/entities/Address.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/domain/entities/Admin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/domain/entities/Admin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/domain/entities/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/domain/entities/Book.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/domain/entities/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/domain/entities/Customer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/domain/entities/Filter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/domain/entities/Filter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/domain/entities/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/domain/entities/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ui/common/interfaces/BookControlBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ui/common/interfaces/BookControlBase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ui/common/util/SceneManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ui/common/util/SceneManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ui/controllers/AdminViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ui/controllers/AdminViewController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ui/controllers/HomeViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ui/controllers/HomeViewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/util/file/BookEncoder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/util/file/BookEncoder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/util/file/BookParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/util/file/BookParser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/util/file/CSVWriter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/util/file/CSVWriter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/util/file/UserEncoder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/util/file/UserEncoder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ui/controllers/LoginViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ui/controllers/LoginViewController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ui/controls/AddBookControl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ui/controls/AddBookControl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ui/controls/BookCollectionControl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ui/controls/BookCollectionControl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ui/controls/FilterControl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ui/controls/FilterControl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/util/file/UserParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/util/file/UserParser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/util/repositories/BookRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/util/repositories/BookRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/util/repositories/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/util/repositories/UserRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/Stock.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Stock.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/UserAccounts.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/UserAccounts.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/AdminView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/AdminView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/HomeView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/HomeView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/controls/AddBookControl.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/controls/AddBookControl.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/controls/BasketControl.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/controls/BasketControl.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/controls/BookControl.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/controls/BookControl.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/controls/FilterControl.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/controls/FilterControl.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/controls/SmallBookControl.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/controls/SmallBookControl.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/util/file/UserEncoderTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/util/file/UserEncoderTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/util/file/UserParserTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/util/file/UserParserTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,8 +69,8 @@
         <option value="JUnit5 Test Class" />
         <option value="JavaFXApplication" />
         <option value="CSS File" />
-        <option value="Enum" />
         <option value="FxmlFile" />
+        <option value="Enum" />
         <option value="Interface" />
         <option value="Class" />
       </list>
@@ -57,6 +78,7 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
   &quot;lastFilter&quot;: {
@@ -98,18 +120,18 @@
     "create.test.in.the.same.root": "true",
     "jdk.selected.JAVA_MODULE": "19",
     "last_directory_selection": "C:/Users/Nick/Documents/Programming/COA256/Bookshop/Domain/src/Entities",
-    "last_opened_file_path": "C:/Users/Nick/Documents/Programming/COA256/Bookshop/src/main/resources/fxml/controls",
+    "last_opened_file_path": "C:/Users/Nick/.jdks/javafx-sdk-20/lib",
     "list.type.of.created.stylesheet": "CSS",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Global Libraries",
+    "project.structure.last.edited": "Artifacts",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
     "run.code.analysis.last.selected.profile": "pProject Default",
-    "settings.editor.selected.configurable": "profiler.jvm",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -119,6 +141,7 @@
       <recent name="main.java.util.interfaces" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Nick\Documents\Programming\COA256\Bookshop\src\main\resources" />
       <recent name="C:\Users\Nick\Documents\Programming\COA256\Bookshop\src\main\resources\fxml\controls" />
     </key>
     <key name="CreateTestDialog.Recents.Supers">
@@ -157,10 +180,10 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="main.Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+    <configuration name="main.Main" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="main.Main" />
       <module name="Bookshop" />
-      <option name="VM_PARAMETERS" value="--module-path &quot;C:\Users\Nick\.jdks\javafx-sdk-20\lib&quot; --add-modules=javafx.base,javafx.controls,javafx.graphics,javafx.media,javafx.fxml" />
+      <option name="VM_PARAMETERS" value="--module-path &quot;C:\Users\Nick\.jdks\javafx-sdk-20\lib&quot; --add-modules=javafx.base,javafx.controls,javafx.graphics,javafx.media,javafx.fxml --add-exports javafx.graphics/com.sun.javafx.sg.prism=ALL-UNNAMED" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="main.*" />
@@ -242,7 +265,6 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.main.Main" />
         <item itemvalue="JUnit.test.java.util.file in Bookshop" />
         <item itemvalue="JUnit.UserEncoderTest" />
         <item itemvalue="JUnit.BookEncoderTest.encodeObject_shouldEncodeAudioBook" />
@@ -263,7 +285,7 @@
       <workItem from="1681233703370" duration="2464000" />
       <workItem from="1681236280655" duration="909000" />
       <workItem from="1681344024395" duration="24026000" />
-      <workItem from="1682431297864" duration="55180000" />
+      <workItem from="1682431297864" duration="116622000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Commit">
       <created>1678290087197</created>
@@ -545,7 +567,35 @@
       <option name="project" value="LOCAL" />
       <updated>1683738868849</updated>
     </task>
-    <option name="localTasksCounter" value="41" />
+    <task id="LOCAL-00041" summary="Setup Dependency Injection">
+      <created>1683814284334</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1683814284334</updated>
+    </task>
+    <task id="LOCAL-00042" summary="Create basic AdminView.fxml">
+      <created>1683814483137</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1683814483137</updated>
+    </task>
+    <task id="LOCAL-00043" summary="Create basic AdminView.fxml">
+      <created>1683815482821</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1683815482821</updated>
+    </task>
+    <task id="LOCAL-00044" summary="Create LoginView.fxml and navigation/scenemanager">
+      <created>1684106835530</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1684106835530</updated>
+    </task>
+    <option name="localTasksCounter" value="45" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -564,9 +614,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Create and implement csv book parser" />
-    <MESSAGE value="Create and implement csv user parser" />
-    <MESSAGE value="Use AssertJ for assertions" />
     <MESSAGE value="Fix genre enum not parsing&#10;&#10;Caused due to Computer Science being stored but&#10;COMPUTER_SCIENCE being the enum" />
     <MESSAGE value="Create BookRepository and implement GetAll()" />
     <MESSAGE value="Override enum toString methods to fit storage format" />
@@ -589,38 +636,12 @@
     <MESSAGE value="Make book quantity property and bind in fxml" />
     <MESSAGE value="Create abstract BookControlBase and new SmallBookControl for checkout" />
     <MESSAGE value="Implement Book filtering and basic basket functionallity" />
-    <option name="LAST_COMMIT_MESSAGE" value="Implement Book filtering and basic basket functionallity" />
+    <MESSAGE value="Setup Dependency Injection" />
+    <MESSAGE value="Create basic AdminView.fxml" />
+    <MESSAGE value="Create LoginView.fxml and navigation/scenemanager" />
+    <option name="LAST_COMMIT_MESSAGE" value="Create LoginView.fxml and navigation/scenemanager" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Main.java</url>
-          <line>27</line>
-          <option name="timeStamp" value="25" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Main.java</url>
-          <line>22</line>
-          <option name="timeStamp" value="26" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Main.java</url>
-          <line>20</line>
-          <option name="timeStamp" value="27" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Main.java</url>
-          <line>32</line>
-          <option name="timeStamp" value="28" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Main.java</url>
-          <line>35</line>
-          <option name="timeStamp" value="29" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
     <pin-to-top-manager>
       <pinned-members>
         <PinnedItemInfo parentTag="main.java.domain.entities.PaperbackBook" memberName="title" />
@@ -636,6 +657,9 @@
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Bookshop$test_java_util_file_in_Bookshop.ic" NAME="test.java.util.file in Bookshop Coverage Results" MODIFIED="1680972735652" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>test.java.util.file.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/Bookshop$main_Main.ic" NAME="main.Main Coverage Results" MODIFIED="1684104867177" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>main.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/Bookshop$BookParserTest.ic" NAME="BookParserTest Coverage Results" MODIFIED="1680804024929" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>test.java.util.file.*</FILTER>
